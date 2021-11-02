@@ -46,7 +46,7 @@ router.delete("/:id", async (req, res) => {
 
 router.patch("/:id", async (req, res) => {
   try {
-    const product = await Product.findByIdAndUpdate(req.params.id, {
+    const product = await Product.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
     });
     return res.status(201).send({ product });
