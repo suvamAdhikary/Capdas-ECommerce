@@ -23,12 +23,14 @@ googlePassport.deserializeUser(function ({ user, token }, done) {
   done(null, { user, token });
 });
 
-const productController = require("./controllers/product.controller");
-const userController = require("./controllers/user.controller");
 const { register, login } = require("./controllers/auth.controller");
+const userController = require("./controllers/user.controller");
+const productController = require("./controllers/product.controller");
+const brandController = require("./controllers/brand.controller");
 
 app.use("/users", userController);
 app.use("/products", productController);
+app.use("/brands", brandController);
 
 app.post(
   "/register",
