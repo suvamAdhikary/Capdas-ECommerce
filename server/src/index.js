@@ -1,98 +1,119 @@
-const express = require('express');
+const express = require("express");
 
-const  googlePassport = require('./configs/google.passport');
+const googlePassport = require("./configs/google.passport");
 
-const fbPassport = require('./configs/facebook.passport');
+const fbPassport = require("./configs/facebook.passport");
 
 const app = express();
 
-const { body } =require('express-validator');
+const { body } = require("express-validator");
 
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: false }));
 
 app.use(express.json());
 
 app.use(googlePassport.initialize());
 app.use(fbPassport.initialize());
 
-googlePassport.serializeUser(function ({user, token}, done) {
-    done(null, {user, token});
+googlePassport.serializeUser(function ({ user, token }, done) {
+  done(null, { user, token });
 });
 
-googlePassport.deserializeUser(function ({user, token}, done) {
-    done(null, {user, token});
+googlePassport.deserializeUser(function ({ user, token }, done) {
+  done(null, { user, token });
 });
 
-const userController = require('./controllers/user.controller');
-const { register, login } = require('./controllers/auth.controller');
+const productController = require("./controllers/product.controller");
+const userController = require("./controllers/user.controller");
+const { register, login } = require("./controllers/auth.controller");
 
+app.use("/users", userController);
+app.use("/products", productController);
 
-app.use('/users', userController);
-
-app.post('/register',
-    body("name").trim().isLength({min: 3}).withMessage('Full name is required'),
-    body("email").trim().isEmail().withMessage('Email is required and should be a valid email address'),
-    body("password").trim().isStrongPassword().withMessage('Password is required and should be a strong password'),
-    register
+app.post(
+  "/register",
+  body("name").trim().isLength({ min: 3 }).withMessage("Full name is required"),
+  body("email")
+    .trim()
+    .isEmail()
+    .withMessage("Email is required and should be a valid email address"),
+  body("password")
+    .trim()
+    .isStrongPassword()
+    .withMessage("Password is required and should be a strong password"),
+  register
 );
 
-app.post('/login',
-    body("email").trim().isEmail().withMessage('Email is required and should be a valid email address'),
-    body("password").trim().isStrongPassword().withMessage('Password is required and should be a strong password'),
-    login
+app.post(
+  "/login",
+  body("email")
+    .trim()
+    .isEmail()
+    .withMessage("Email is required and should be a valid email address"),
+  body("password")
+    .trim()
+    .isStrongPassword()
+    .withMessage("Password is required and should be a strong password"),
+  login
 );
-
 
 // Google
 
 const scope = [
-    'https://www.googleapis.com/auth/plus.login',
-    'https://www.googleapis.com/auth/userinfo.email',
-  ];
-app.get('/auth/google',
-  googlePassport.authenticate('google', { scope: scope}));
+  "https://www.googleapis.com/auth/plus.login",
+  "https://www.googleapis.com/auth/userinfo.email",
+];
+app.get(
+  "/auth/google",
+  googlePassport.authenticate("google", { scope: scope })
+);
 
-app.get('/auth/google/callback', 
-  googlePassport.authenticate('google', { failureRedirect: '/auth/google/failure'}),
-  function(req, res) {
-
-    const {user, token} = req.user;
-    return res.status(200).json({user, token});
-
-});
-
+app.get(
+  "/auth/google/callback",
+  googlePassport.authenticate("google", {
+    failureRedirect: "/auth/google/failure",
+  }),
+  function (req, res) {
+    const { user, token } = req.user;
+    return res.status(200).json({ user, token });
+  }
+);
 
 // Facebook
 
-app.get('/auth/facebook',
-  fbPassport.authenticate('facebook',
-  {
-    "data": [
-      {
-        "permission": "public_profile",
-        "status": "granted"
-      },
-      {
-        "permission": "email",
-        "status": "granted"
-      },
-      {
-        "permission": "user_friends",
-        "status": "declined"
-      }
-    ]
-  }, {scope: 'public_profile,email'}
-  ));
+app.get(
+  "/auth/facebook",
+  fbPassport.authenticate(
+    "facebook",
+    {
+      data: [
+        {
+          permission: "public_profile",
+          status: "granted",
+        },
+        {
+          permission: "email",
+          status: "granted",
+        },
+        {
+          permission: "user_friends",
+          status: "declined",
+        },
+      ],
+    },
+    { scope: "public_profile,email" }
+  )
+);
 
-app.get('/auth/facebook/callback',
-  fbPassport.authenticate('facebook', { failureRedirect: '/auth/facebook/failure' }),
-  function(req, res) {
-
-    const {user, token} = req.user;
-    return res.status(200).json({user, token});
-
-  });
-
-
+app.get(
+  "/auth/facebook/callback",
+  fbPassport.authenticate("facebook", {
+    failureRedirect: "/auth/facebook/failure",
+  }),
+  function (req, res) {
+    const { user, token } = req.user;
+    return res.status(200).json({ user, token });
+  }
+);
 
 module.exports = app;
