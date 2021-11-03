@@ -21,6 +21,8 @@ const userSchema = mongoose.Schema({
     username: reqStringF,
     password: reqStringF,
     mobile: reqNumberF,
+    totalItemsInBag: reqNumberF,
+    totalPrice: reqNumberF,
 }, {
     versionKey: false,
     timestamp: true,
