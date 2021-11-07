@@ -14,6 +14,22 @@ const reqNumberF = {
     type: Number,
     required : false,
 }
+const reqNumberT = {
+    type: Number,
+    required : true,
+}
+
+const addressSchema = mongoose.Schema({
+    address: reqStringF,
+    houseNo: reqStringF,
+    locality: reqStringF,
+    pin: reqNumberT,
+    city: reqStringF,
+    state: reqStringF,
+}, {
+    versionKey: false,
+    timestamp: true,
+})
 
 const userSchema = mongoose.Schema({
     name: reqStringF,
@@ -23,6 +39,8 @@ const userSchema = mongoose.Schema({
     mobile: reqNumberF,
     totalItemsInBag: reqNumberF,
     totalPrice: reqNumberF,
+    address: addressSchema,
+    image: reqStringF,
 }, {
     versionKey: false,
     timestamp: true,
