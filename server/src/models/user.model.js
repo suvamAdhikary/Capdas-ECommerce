@@ -33,7 +33,7 @@ const addressSchema = mongoose.Schema({
 
 const userSchema = mongoose.Schema({
     name: reqStringF,
-    email: reqStringT,
+    email: {type: String, required: true, unique: true},
     username: reqStringF,
     password: reqStringF,
     mobile: reqNumberF,

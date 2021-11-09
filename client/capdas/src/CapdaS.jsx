@@ -1,6 +1,9 @@
+import Signup from "./user/Signup"
 
 
 export default function CapdaS() {
 
-    return <h1>CapdaS</h1>
+    return (
+        <Signup />
+    )
 }
