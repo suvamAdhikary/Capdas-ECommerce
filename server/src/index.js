@@ -27,8 +27,8 @@ const { register, login } = require("./controllers/auth.controller");
 const userController = require("./controllers/user.controller");
 const productController = require("./controllers/product.controller");
 const brandController = require("./controllers/brand.controller");
-const categoryController = require("./controllers/cate.controller");
-const subCategoryController = require("./controllers/sub_cate.controller")
+const categoryController = require("./controllers/category.controller");
+const subCategoryController = require("./controllers/subCategory.controller");
 
 app.use("/users", userController);
 app.use("/products", productController);
