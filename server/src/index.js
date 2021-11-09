@@ -27,10 +27,16 @@ const { register, login } = require("./controllers/auth.controller");
 const userController = require("./controllers/user.controller");
 const productController = require("./controllers/product.controller");
 const brandController = require("./controllers/brand.controller");
+const categoryController = require("./controllers/cate.controller");
+const subCategoryController = require("./controllers/sub_cate.controller")
 
 app.use("/users", userController);
 app.use("/products", productController);
 app.use("/brands", brandController);
+app.use("/categories", categoryController);
+app.use("/sub_categories", subCategoryController );
+
+
 
 app.post(
   "/register",
