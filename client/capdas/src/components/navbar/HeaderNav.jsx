@@ -3,7 +3,7 @@ import NavButton from "./NavButton";
 
 
 const HeaderNavbar = styled.header`
-padding: 20px;
+padding: 20px 20px 16px 20px;
 box-sizing: border-box;
     display: flex;
     flex-direction: row;
@@ -32,7 +32,7 @@ const Nav = styled.nav`
 
 const Img = styled.img`
 background-color: white;
-padding:  5px;
+padding:  5px 2px;
 margin-bottom: 5px;
 
 

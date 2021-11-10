@@ -2,8 +2,8 @@ import styled from "styled-components";
 import CarouselContainer from "../components/CarouselContainer";
 import img5 from "./images/img5.jpg";
 import img6 from "./images/img6.jpg";
-import png1 from "./images/png1.jpg";
-import png2 from "./images/png2.jpg";
+import png1 from "./images/png1.png";
+import png2 from "./images/png2.png";
 import Rectangle65 from "./images/img7.jpg";
 import Rectangle66 from "./images/img8.jpg";
 import Rectangle67 from "./images/img9.jpg";
@@ -12,6 +12,7 @@ import img11 from "./images/img11.jpg";
 
 const Body = styled.body`
 width: 375px;
+color: #151A17;
 `;
 
 const PP = styled.p`
@@ -34,6 +35,7 @@ height: 17px;
 width: 229px;
 margin:auto;
 p{
+    color: #151A17;
 font-weight: 400;
 }
 `;
@@ -80,7 +82,7 @@ letter-spacing: 1px;
 padding-top: 0px;
 width: 80px !important;
 background-color: white;
-margin-top: 17px;
+margin: 17px 0 0 1px;
 }
 
 `
@@ -93,7 +95,9 @@ border-radius: 10px;
  box-sizing: border-box;
  padding: 30px 25px;
 
- p{
+
+;
+p{
 margin-bottom: 0px;
 font-size: 18px;
 line-height: 22.32px;
@@ -151,8 +155,8 @@ export const Hp = () => {
             <div><CarouselContainer/></div>
         </Slider>
         <Tab><div>Our Promises</div>
-            <div><img src={ png2} alt="" /><p>Sustainability</p></div>
-            <div><img src={ png1} alt="" /><p>Safe Delivery</p></div></Tab>
+            <div><img src={ png1} alt="" /><p>Sustainability</p></div>
+            <div><img src={ png2} alt="" /><p>Safe Delivery</p></div></Tab>
         <Offer><p>Donate your worn out clothes
             and get <Span>EXTRA</Span> 10% discount.</p>
             <PP>*Discount applicable only on non discounted prodcuts</PP>

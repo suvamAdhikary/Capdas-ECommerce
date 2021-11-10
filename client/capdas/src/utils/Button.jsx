@@ -15,8 +15,9 @@ margin: auto;
 border: none;
 `
 
-export const Btn = () => {
+export default function Button ({children,handleSubmit}) {
     return <>
-    <Btn1>Checkout</Btn1>
+        <Btn1 onClick={handleSubmit}>{children}</Btn1>
+
     </>
 }
