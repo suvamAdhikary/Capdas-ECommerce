@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Wrapper from "./utils/Wrapper";
-import { NameInput, Label, EmailInput, PasswordInput, CheckBox, Form } from "./utils/Input";
+import { Label, EmailInput, PasswordInput, CheckBox, Form } from "./utils/Input";
 import { Aggrement, AggrementWrapper } from "./utils/Aggrement";
 import Button from "./utils/Button";
 import { Fb, Google, SocialWrapper } from "./utils/SocialLog";
@@ -10,9 +10,8 @@ import { ToggleBtn, ToggleWrapper } from "./utils/ToggleBtn";
 import Cross from "./utils/Cross";
 
 
-export default function Signup() {
+export default function Login() {
     const [userDetails, setUserDetails] = useState({
-        name: "",
         email: "",
         password: "",
     })
@@ -22,7 +21,7 @@ export default function Signup() {
 
         try {
 
-            await base.post('/register', userDetails ,{
+            await base.post('/login', userDetails ,{
                 mode: 'same-origin'
             });
 
@@ -43,7 +42,7 @@ export default function Signup() {
         })
     }
 
-    const { name, email, password } = userDetails;
+    const { email, password } = userDetails;
     return (
         <Wrapper>
             <Cross />
@@ -53,15 +52,6 @@ export default function Signup() {
                 <ToggleBtn>Sign In</ToggleBtn>
             </ToggleWrapper>
             <Form handleSubmit={handleSubmit}>
-            <Label>
-                Name
-                <br />
-                <NameInput
-                    name={name}
-                    handleChange={handleChange}
-                />
-            </Label>
-            <br />
             <Label>
                 E-mail
                 <br />
@@ -85,7 +75,7 @@ export default function Signup() {
                 {" "}
                 <Aggrement>I agree to the <span>Terms of Service</span> and <span>Privacy Policy</span></Aggrement>
             </AggrementWrapper>
-            <Button>Sign Up</Button>
+            <Button>Sign In</Button>
             </Form>
             <Aggrement>Or</Aggrement>
             <SocialWrapper>

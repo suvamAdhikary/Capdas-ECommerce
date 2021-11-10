@@ -20,12 +20,12 @@ const reqNumberT = {
 }
 
 const addressSchema = mongoose.Schema({
-    address: reqStringF,
-    houseNo: reqStringF,
-    locality: reqStringF,
+    name: reqStringT,
+    houseNo: reqStringT,
+    locality: reqStringT,
     pin: reqNumberT,
-    city: reqStringF,
-    state: reqStringF,
+    city: reqStringT,
+    state: reqStringT,
 }, {
     versionKey: false,
     timestamp: true,

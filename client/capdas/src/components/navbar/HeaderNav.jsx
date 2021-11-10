@@ -1,6 +1,6 @@
 import styled from "styled-components";
+import Heading from "../Heading";
 import NavButton from "./NavButton";
-
 
 const HeaderNavbar = styled.header`
     display: flex;
@@ -13,13 +13,6 @@ const SandwichWrapper = styled.div`
     display: flex;
     flex-direction: row;
 
-    div {
-        color: #56675B;
-        font-size: 24px;
-        font-weight: 800;
-        line-height: 29.76px;
-        letter-spacing: 1px;
-    }
 `;
 
 
@@ -36,7 +29,7 @@ export default function HeaderNav() {
     return <HeaderNavbar>
         <SandwichWrapper>
             <img src="assets/menu.svg" alt="sandwitch" />
-            <div>CapdaS</div>
+            <Heading />
         </SandwichWrapper>
         <Nav>
             <NavButton>
