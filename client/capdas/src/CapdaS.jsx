@@ -1,10 +1,12 @@
 // import Signup from "./user/Signup"
-import AddAddress from "./user/AddAddress"
+import { CardDetail } from "./cardDetails/CardDetail"
+// import AddAddress from "./user/AddAddress"
 // import Login from "./user/Login"
 
 export default function CapdaS() {
 
     return (
-        <AddAddress />
+        // <AddAddress />
+        <CardDetail />
     )
 }
