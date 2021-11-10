@@ -105,6 +105,8 @@ p{
    }`;
 
 export const Bag = ()=> {
+
+    
     return <><CONTAINER><div><img src={leftArrow} alt="" /></div><div><p>Bag</p></div></CONTAINER>
         <OrderedItm>
             <Div1><img src="" alt="" /></Div1>
