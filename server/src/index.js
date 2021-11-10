@@ -30,6 +30,7 @@ const brandController = require("./controllers/brand.controller");
 const categoryController = require("./controllers/category.controller");
 const subCategoryController = require("./controllers/subCategory.controller");
 
+
 app.use("/users", userController);
 app.use("/products", productController);
 app.use("/brands", brandController);
