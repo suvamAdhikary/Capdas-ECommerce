@@ -1,6 +1,10 @@
-
+// import Signup from "./user/Signup"
+import AddAddress from "./user/AddAddress"
+// import Login from "./user/Login"
 
 export default function CapdaS() {
 
-    return <h1>CapdaS</h1>
+    return (
+        <AddAddress />
+    )
 }

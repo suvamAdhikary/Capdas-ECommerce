@@ -1,4 +1,4 @@
-import { Route, Switch, Link } from "react-router-dom";
+// import { Route, Switch, Link } from "react-router-dom";
 import './App.css';
 import CapdaS from "./CapdaS";
 import FooterNav from "./components/navbar/FooterNav";
