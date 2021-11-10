@@ -10,7 +10,7 @@ import Rectangle67 from "./images/img9.jpg";
 import Rectangle68 from "./images/img10.jpg";
 import img11 from "./images/img11.jpg";
 
-const Body = styled.body`
+const Main = styled.main`
 width: 375px;
 color: #151A17;
 `;
@@ -149,7 +149,7 @@ div{
 
 
 export const Hp = () => {
-    return <><Body>
+    return <Main>
         <Div><p>Estimated delivery time 1-2 days</p></Div>
         <Slider>
             <div><CarouselContainer/></div>
@@ -171,5 +171,5 @@ export const Hp = () => {
         </Circles>
         <img src={img11} alt="" />
       
-    </Body></>
+    </Main>
 }
