@@ -17,19 +17,34 @@ const MainForm = styled.form`
     justify-content: flex-start;
 `;
 
-export function TextInput({children}) {
+export function NameInput({ name, handleChange }) {
 
-    return <Input type="text" />
+    return <Input
+            type="text"
+            name="name"
+            value={name}
+            onChange={(e)=>handleChange(e)}
+        />
 };
 
-export function EmailInput({children}) {
+export function EmailInput({ email, handleChange }) {
 
-    return <Input type="email" />
+    return <Input
+            type="email"
+            name="email"
+            value={email}
+            onChange={(e)=>handleChange(e)}
+        />
 };
 
-export function PasswordInput({children}) {
+export function PasswordInput({ password, handleChange }) {
 
-    return <Input type="password" />
+    return <Input
+            type="password"
+            name="password"
+            value={password}
+            onChange={(e)=>handleChange(e)}
+        />
 };
 
 export function Label({children}) {
@@ -42,7 +57,7 @@ export function CheckBox() {
     return <Input type="checkbox" />
 };
 
-export function Form({children}) {
+export function Form({ children, handleSubmit }) {
 
-    return <MainForm>{children}</MainForm>
+    return <MainForm onSubmit={(e)=> handleSubmit(e)}>{children}</MainForm>
 }

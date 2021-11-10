@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import Wrapper from "./utils/Wrapper";
-import { TextInput, Label, EmailInput, PasswordInput, CheckBox, Form } from "../utils/Input";
+import { NameInput, Label, EmailInput, PasswordInput, CheckBox, Form } from "../utils/Input";
 import { Aggrement, AggrementWrapper } from "./utils/Aggrement";
 import Button from "./utils/Button";
 import { Fb, Google, SocialWrapper } from "./utils/SocialLog";
@@ -15,12 +15,14 @@ export default function Signup() {
         password: "",
     })
 
-    const handleNew = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
 
-            await base.post('/signup', userDetails);
+            await base.post('/register', userDetails ,{
+                mode: 'same-origin'
+            });
 
         } catch (err) {
             console.log(err.message);
@@ -30,7 +32,7 @@ export default function Signup() {
 
     const handleChange = (e) => {
         e.preventDefault();
-        console.log(e.target);
+
         const { name, value } = e.target;
 
         setUserDetails({
@@ -42,37 +44,31 @@ export default function Signup() {
     const { name, email, password } = userDetails;
     return (
         <Wrapper>
-            <Form onSubmit={handleNew}>
-            <Label for="name">
+            <Form handleSubmit={handleSubmit}>
+            <Label>
                 Name
                 <br />
-                <TextInput
-                    name="name"
-                    value={name}
-                    type="text"
-                    onChange={(e)=>handleChange(e)}
+                <NameInput
+                    name={name}
+                    handleChange={handleChange}
                 />
             </Label>
             <br />
-            <Label for="email">
+            <Label>
                 E-mail
                 <br />
                 <EmailInput
-                    name="email"
-                    value={email}
-                    type="email"
-                    onChange={handleChange}
+                    name={email}
+                    handleChange={handleChange}
                 />
             </Label>
             <br />
-            <Label for="password">
+            <Label>
                 Password
                 <br />
                 <PasswordInput
-                    name="password"
-                    value={password}
-                    type="password"
-                    onChange={handleChange}
+                    name={password}
+                    handleChange={handleChange}
                 />
             </Label>
             <br />
