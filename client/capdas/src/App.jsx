@@ -5,13 +5,16 @@ import FooterNav from "./components/navbar/FooterNav";
 import HeaderNav from "./components/navbar/HeaderNav";
 import { Hp } from "./Homepage/Homepage";
 import CarouselContainer from "./components/CarouselContainer"
+import {Btn} from "./components/BagPage/LongButton"
 function App() {
   return (
     <div className="App">
-      <HeaderNav />
-      {/* <CapdaS /> */}
+    
+      {/* <HeaderNav />
+      <CapdaS />
       <Hp />
-      {/* <FooterNav /> */}
+      <FooterNav /> */}
+        <Btn/>
     </div>
   );
 }
