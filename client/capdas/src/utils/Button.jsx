@@ -12,6 +12,8 @@ line-height: 29.76px;
 letter-spacing: 1px;
 font-size: 24px;
 margin: auto;
+margin-top: 255px;
+margin-bottom: 104px;
 border: none;
 `
 
