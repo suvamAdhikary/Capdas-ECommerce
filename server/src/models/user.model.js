@@ -23,7 +23,7 @@ const addressSchema = mongoose.Schema({
     name: reqStringT,
     houseNo: reqStringT,
     locality: reqStringT,
-    pin: reqNumberT,
+    pin: reqStringT,
     city: reqStringT,
     state: reqStringT,
 }, {

@@ -4,10 +4,12 @@ import Wrapper from "./utils/Wrapper";
 import Cross from "./utils/Cross";
 import { useState } from "react";
 import { base } from "../utils/request";
+import Button from "../utils/Button";
+
+
 const Input = styled.input`
 
 `;
-
 
 const initState = {
     name: "",
@@ -32,10 +34,16 @@ export default function AddAddress() {
         })
     }
 
-    const hanldeSubmit = async () => {
-
+    const handleSubmit = async () => {
+        const id = JSON.parse(localStorage.getItem('CapdaS_user_id'));
+        console.log(JSON.stringify({
+            "address": formData
+        }));
         try {
-            await base.patch(`/users`)
+            await base.patch(`/users/${id}`, {
+                "address": formData
+            });
+
         } catch (err) {
             console.log(err.message);
         }
@@ -92,6 +100,9 @@ export default function AddAddress() {
                 />
                 </div>
             </Form>
+            <Button handleSubmit={handleSubmit}>
+                Add new Address
+            </Button>
         </Wrapper>
     )
 }

@@ -21,9 +21,12 @@ export default function Login() {
 
         try {
 
-            await base.post('/login', userDetails ,{
+            const { data } = await base.post('/login', userDetails ,{
                 mode: 'same-origin'
             });
+
+            localStorage.setItem('CapdaS_user_token', JSON.stringify(data?.token));
+            localStorage.setItem('CapdaS_user_id', JSON.stringify(data?.user?._id));
 
         } catch (err) {
             console.log(err.message);
