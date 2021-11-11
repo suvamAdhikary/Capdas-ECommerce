@@ -5,10 +5,14 @@ import { useState } from "react";
 import HeaderNav from "./components/navbar/HeaderNav";
 import FooterNav from "./components/navbar/FooterNav";
 
+import StartScreen from "./landingPages/StartScreen";
+import SplashScreen1 from "./landingPages/SplashScreen1";
+import SplashScreen2 from "./landingPages/SplashScreen2";
 import Signup from "./user/Signup";
+import Login from "./user/Login";
 import { Hp } from "./Homepage/Homepage";
 import AddAddress from "./user/AddAddress";
-import Login from "./user/Login";
+
 
 
 
@@ -21,8 +25,12 @@ export default function CapdaS() {
         { showNav ? <HeaderNav /> : null }
 
         <Routes>
+            
+            <Route path="/" element={<SplashScreen1 />} />
+            <Route path="/ss2" element={<SplashScreen2 />} />
+            <Route path="/signup" element={<Signup />} />
 
-            <Route path="/" exact element={<Hp />} />
+            <Route path="/CapdaS" exact element={<Hp />} />
 
             
         </Routes>

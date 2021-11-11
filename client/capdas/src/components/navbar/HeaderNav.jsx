@@ -52,7 +52,7 @@ export default function HeaderNav() {
             <img src="assets/menu.svg" alt="sandwitch" />
             </Link>
 
-            <Link to="/">
+            <Link to="/CapdaS">
             <Heading />
             </Link>
 
