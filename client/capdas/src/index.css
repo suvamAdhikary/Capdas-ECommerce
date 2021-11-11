@@ -1,13 +1,60 @@
-body {
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  font-family: 'Cabinet Grotesk', sans-serif;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul, div, main, nav, section, header, footer {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a, a:visited, a:hover {
+  text-decoration: none;
+  font-family: 'Cabinet Grotesk', sans-serif;
+}
+
+body {
+  font-family: 'Cabinet Grotesk', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Cabinet Grotesk', sans-serif;
+}
+
+:root {
+  --primary-color: #56675B;
+  --background-color: #FFFFF7;
+  --secondary-color: #D5E6D5;
+  --error-color: #DD0017;
+  --success-color: #009944;
+
+  --t1-color: #151A17;
+  --t2-color: #383C3A;
+  --t3-color: #5B5F5D;
+  --t4-color: #7E817F;
+  --t5-color: #A1A3A2;
+  --t6-color: #C5C6C5;
+  --t7-color: #E9E9E9;
+
+  --b1-color: #151A17;
+  --b2-color: #29332D;
+  --b3-color: #3E4D44;
+  --b4-color: #52665A;
+  --b5-color: #678071;
 }
