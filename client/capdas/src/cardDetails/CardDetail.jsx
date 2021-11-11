@@ -106,14 +106,6 @@ const Form = styled.form`
         top: 518px;
     }
 
-    Button {
-        position: absolute;
-        width: 327px;
-        height: 43px;
-        left: 24px;
-        top: 665px;
-    }
-
     .footer {
         position: absolute;
         width: 375px;
