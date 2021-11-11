@@ -5,13 +5,25 @@ import NavButton from "./NavButton";
 
 
 const FooterNavbar = styled.footer`
+
+    /* position: absolute;
+    bottom: 16px; */
+    padding: 20px 20px 16px 20px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-between; */
 `;
 
 const Nav = styled.nav`
 
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 `;
 
 const Img = styled.img`
@@ -29,8 +41,6 @@ export default function FooterNav() {
                 <Img src="assets/HomeIcon.svg" alt="home icon"/>
             </NavButton>
             </Link>
-
-            &nbsp;
 
             <Link to="/categories">
             <NavButton>

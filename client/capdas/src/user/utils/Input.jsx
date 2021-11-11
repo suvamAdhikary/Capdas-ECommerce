@@ -1,12 +1,26 @@
 import styled from "styled-components";
 
 const Input = styled.input`
-    /* border: none; */
+    border: 1px solid #56675B;
+    border-radius: 10px;
 
+    @media screen and (max-width: 375px) {
+        width: 208px;
+        height: 38px;
+
+        &[type="checkbox"] {
+            width: 10px;
+            height: 10px;
+            margin-top: 6.5px;
+            margin-right: 5px;
+        }
+    }
 
 `;
 
 const InputWrapper = styled.label`
+
+    text-align: left;
 
 `;
 
