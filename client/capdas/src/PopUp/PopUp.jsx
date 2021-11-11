@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import rightArrow from "../Homepage/images/rightArrow.png";
-import homepage from "../Homepage/images/homepage.png";
+import Cross from "../user/utils/Cross"
 const Top = styled.div`
 width: 100%;
 height: 45px;
@@ -13,6 +13,12 @@ background-repeat: no-repeat;
 background-size: cover;
 
 
+  button:nth-child(1){
+position: absolute;
+top: 21px;
+right: 29px;
+background-color: transparent;
+}
  @supports (backdrop-filter: none) {
      div{
     height: 767px;
@@ -22,14 +28,12 @@ background-size: cover;
     /* margin: 41px 127px 304px 24px ; */
       -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
+
+        
 }
  }
 `;
-const SVG = styled.svg`
-position: absolute;
-top: 21px;
-right: 29px;
-`
+
 
 const Flex = styled.div`
   width: 224px;
@@ -41,6 +45,10 @@ display:flex;
 flex-direction: column;
 box-sizing: border-box;
 padding: 10px;
+border-radius: 10px;
+color: #151A17;
+ 
+
 div{
     display:flex;
     justify-content: space-between;
@@ -51,31 +59,45 @@ flex-direction: row;
     div:nth-child(1){
        width: 900px;
     }
+    /* div:nth-child(2){
+     
+    } */
     p{
 font-size: 24px;
 font-weight: 700;
 line-height: 29.76px;
 letter-spacing: 1px;
     }
-    img{
-        margin-bottom: 15px;
-    }
+   
 }
 div:nth-child(8){
 height:59px;
 }
-              `
+`
+
+const Btn = styled.div`
+width: 134px !important;
+display:block;
+height: 40px !important;
+background-color: #56675B;
+border-radius: 10px;
+border: none;
+color: #FFFFF7;
+font-size: 24px;
+font-weight: 700;
+line-height: 30px;
+letter-spacing: 1px;
+text-align: center;
+margin-top: -10px;
+`
 
 
-export const PopUp = () => {
+export const PopUpp = () => {
     return <>
         <Top></Top>
-       
         <Container>
             <div>
-        <SVG xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-<path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" fill="#151A17"/>
-</SVG>
+                <Cross/>
                 <Flex>
                     <div>
                     <div><p>Mend</p></div>
@@ -93,7 +115,7 @@ export const PopUp = () => {
                     <div><img src={rightArrow} alt="" /></div></div>
                     <div><div><p>Work with Us</p></div>
                     <div><img src={rightArrow} alt="" /></div></div>
-                    <div><p></p></div>
+                    <div><Btn>Sign Up/In</Btn></div>
 </Flex>
             </div>
         </Container>

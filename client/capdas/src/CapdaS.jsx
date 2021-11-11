@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import HeaderNav from "./components/navbar/HeaderNav";
 import FooterNav from "./components/navbar/FooterNav";
-
+import {PopUpp} from "./PopUp/PopUp"
 import SplashScreen1 from "./landingPages/SplashScreen1";
 import SplashScreen2 from "./landingPages/SplashScreen2";
 import Signup from "./user/Signup";
@@ -13,7 +13,7 @@ import { Hp } from "./Homepage/Homepage";
 import Category from "./category/Category";
 import { Bag } from "./BagPage/Bag";
 import AddAddress from "./user/AddAddress";
-import {PopUp as Menu} from "../src/PopUp/PopUp"
+// import {PopUp as Menu} from "../src/PopUp/PopUp"
 import { Payment } from "./payment/Payment";
 import { CardDetail } from "./cardDetails/CardDetail";
 import { Success } from "./successPage/Success";
@@ -28,7 +28,7 @@ export default function CapdaS() {
 
         { showNav ? <HeaderNav /> : null }
 
-        <Routes>
+        {/* <Routes>
             
             <Route path="/" element={<SplashScreen1 />} />
             <Route path="/ss2" element={<SplashScreen2 />} />
@@ -43,9 +43,9 @@ export default function CapdaS() {
             <Route path="/card" element={<CardDetail />} />
             <Route path="/success" element={<Success />} />
             
-        </Routes>
+        </Routes> */}
 
-        {showNav ? <FooterNav /> : null}
-
+        {/* {showNav ? <FooterNav /> : null} */}
+<PopUpp/>
     </>)
 }
