@@ -37,10 +37,10 @@ export const Success = () => {
             <p>Thank you for choosing CapdaS.</p>
         </Message>
 
-        <Link to="CapdaS">
+        <Link to="/CapdaS">
             <Button>Continue Shopping</Button>
         </Link>
-        
+
         </>
     );
 }

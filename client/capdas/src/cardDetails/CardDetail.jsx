@@ -123,7 +123,9 @@ export const CardDetail = () => {
     return (
         <>
             <Back>
-                <img src="assets/leftArrow.png" alt="back" />
+                <Link to="/payment">
+                    <img src="assets/leftArrow.png" alt="back" />
+                </Link>
             </Back>
             <Title>
                 <p>Payment</p>
@@ -146,7 +148,7 @@ export const CardDetail = () => {
                 <Link to="/success">
                     <Button> Confirm Payment </Button>
                 </Link>
-                
+
             </Form>
         </>
     );
