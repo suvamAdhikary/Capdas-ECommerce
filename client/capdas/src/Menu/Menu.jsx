@@ -92,7 +92,7 @@ margin-top: -10px;
 `
 
 
-export const PopUpp = () => {
+export const Menu = () => {
     return <>
         <Top></Top>
         <Container>

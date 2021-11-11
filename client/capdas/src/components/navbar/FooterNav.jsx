@@ -54,7 +54,7 @@ export default function FooterNav() {
             </NavButton>
             </Link>
 
-            <Link to="/profile">
+            <Link to="/account">
             <NavButton>
                 <Img src="assets/ProfileIcon.svg" alt="profile icon"/>
             </NavButton>
