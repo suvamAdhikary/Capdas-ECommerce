@@ -29,6 +29,10 @@ export default function Login() {
             localStorage.setItem('CapdaS_user_token', JSON.stringify(data?.token));
             localStorage.setItem('CapdaS_user_id', JSON.stringify(data?.user?._id));
 
+            if(data) {
+                return window.location.href = '/CapdaS'
+            }
+
         } catch (err) {
             console.log(err.message);
         }
