@@ -10,6 +10,7 @@ import SplashScreen2 from "./landingPages/SplashScreen2";
 import Signup from "./user/Signup";
 import Login from "./user/Login";
 import { Hp } from "./Homepage/Homepage";
+import Category from "./category/Category";
 import { Bag } from "./BagPage/Bag";
 import AddAddress from "./user/AddAddress";
 import { Payment } from "./payment/Payment";
@@ -32,6 +33,7 @@ export default function CapdaS() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/signin" element={<Login />} />
             <Route path="/CapdaS" exact element={<Hp />} />
+            <Route path="/categories" element={<Category />} />
             <Route path="/bag" element={<Bag />} />
             <Route path="/newAddress" element={<AddAddress />} />
             <Route path="/payment" element={<Payment />} />
