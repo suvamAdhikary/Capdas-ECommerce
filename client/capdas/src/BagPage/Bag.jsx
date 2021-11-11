@@ -97,12 +97,39 @@ box-sizing: border-box;
 margin-bottom: 0px;
 p{
     width: 15px;
-    
     font-weight: 700;
     color: #56675B;
     font-size: 22px;}
 }
    }`;
+
+const Div3 = styled.div`
+   display: flex;
+   flex-direction: row;
+   margin: 32px 24px;
+   /* border: 1px solid black; */
+   justify-content: space-between;
+   div:nth-child(1)> p:nth-child(1),div:nth-child(1)> p:nth-child(2),
+   div:nth-child(2)> p:nth-child(1),div:nth-child(2)> p:nth-child(2){
+     color: #5B5F5D;
+font-size: 16px;
+font-weight: 400;
+line-height: 20px;
+letter-spacing: 1px;
+margin-bottom: 5px;
+font-weight:400px;
+   }
+    div:nth-child(1)> p:nth-child(3),
+   div:nth-child(2)> p:nth-child(3){
+font-weight: 600;
+text-align: left;
+color:#151A17;
+font-size: 16px;
+font-weight: 400;
+line-height: 20px;
+letter-spacing: 1px;
+   }
+`;
 
 export const Bag = ()=> {
 
@@ -122,7 +149,18 @@ export const Bag = ()=> {
                 </div>
             </Div2>
         </OrderedItm>
-    
+        <Div3>
+            <div>
+            <p>Subtotal</p>
+            <p>Discount</p>
+            <p>Total</p>
+            </div>
+            <div>
+            <p>123</p>
+            <p>654</p>
+            <p>564</p>
+            </div>
+        </Div3>
     
     
     </>

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const Btn1 = styled.button`
+
     position: absolute;
     width: 327px;
     height: 43px;
@@ -16,6 +17,7 @@ const Btn1 = styled.button`
     font-size: 24px;
     margin: auto;
     border: none;
+
 `
 
 export default function Button ({children,handleSubmit}) {
