@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import leftArrow from "../Homepage/images/leftArrow.jpg"
 import Group from "../Homepage/images/Group.png";
+import { Link } from "react-router-dom";
 const Main = styled.div`
 button{
     width: 328px;
@@ -99,25 +100,47 @@ text-align: left;
 `;
 
 
-export const Payment = ({children}) => {
-    return <Main><CONTAINER><div><img src={leftArrow} alt="" /></div><div><p>{children}</p></div></CONTAINER>
-        <Tab><div>
-            <div><img src={Group} alt="" /></div>
-            <div>
-                <p>Bank Offers</p>
-                <p>10% instant discount with HDFC Bank Credit cards on a min. spend of Rs. 3000. TCA</p>
-            </div>
-           </div>
-            <button><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-<circle cx="6" cy="6" r="6" fill="#FFFFF7"/>
-            </svg>
-                Card</button>
-            <button><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-<circle cx="6" cy="6" r="6" fill="#FFFFF7"/>
-</svg>Wallet</button>
-            <button><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-<circle cx="6" cy="6" r="6" fill="#FFFFF7"/>
-</svg>Cash on Delivery</button>
- </Tab>
-    </Main>
+export const Payment = ({ children }) => {
+    return (
+        <Main>
+            <CONTAINER>
+                <div>
+                    <Link to="/bag">
+                        <img src={leftArrow} alt="" />
+                    </Link>
+                </div>
+                <div>
+                    <p>{children}</p>
+                </div>
+            </CONTAINER>
+
+            <Tab>
+                <div>
+                    <div><img src={Group} alt="" /></div>
+                    <div>
+                        <p>Bank Offers</p>
+                        <p>10% instant discount with HDFC Bank Credit cards on a min. spend of Rs. 3000. TCA</p>
+                    </div>
+                </div>
+
+                <button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <circle cx="6" cy="6" r="6" fill="#FFFFF7" />
+                    </svg> Card
+                </button>
+
+                <button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <circle cx="6" cy="6" r="6" fill="#FFFFF7" />
+                    </svg>Wallet
+                </button>
+                
+                <button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <circle cx="6" cy="6" r="6" fill="#FFFFF7" />
+                    </svg>Cash on Delivery
+                </button>
+            </Tab>
+        </Main>
+    );
 }
