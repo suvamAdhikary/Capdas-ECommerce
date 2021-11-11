@@ -1,0 +1,93 @@
+.Category_main {
+  width: 375px;
+  /* height: 812px; */
+  /* border: 1px solid black; */
+  margin: auto;
+  background: #fffff7;
+}
+
+.CategoryBox {
+  width: 327px;
+  /* height: 700px; */
+  /* border: 1px solid black; */
+  margin-left: 24px;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Category_festiveWear {
+  width: 327px;
+  height: 90px;
+  /* border: 1px solid red; */
+  position: relative;
+  background: #d5e6d5;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+.CategoryName {
+  position: absolute;
+  width: 142px;
+  height: 25px;
+  left: 8px;
+  top: 33px;
+
+  position: absolute;
+  width: 142px;
+  height: 25px;
+  left: 8px;
+  top: 33px;
+
+  font-family: Cabinet Grotesk;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 25px;
+
+  /* identical to box height */
+  display: flex;
+  align-items: center;
+  letter-spacing: 1px;
+}
+.CategoryImages {
+  position: absolute;
+  width: 58px;
+  height: 80px;
+  left: 223px;
+  top: 5px;
+}
+.CategoryArrow {
+  position: absolute;
+  left: 90%;
+  top: 45.79%;
+  bottom: 14.21%;
+}
+.CategoryArrow:hover {
+  transform: rotate(180deg);
+}
+
+.subcategory {
+  width: 327px;
+  height: 198px;
+  background: #d5e6d5;
+  border-radius: 0px 0px 10px 10px;
+  margin-bottom: 5px;
+}
+
+.subcategory_names {
+  width: 85px;
+  height: 22px;
+  margin-left: 8px;
+  margin-top: 12px;
+  font-family: Cabinet Grotesk;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: left;
+  letter-spacing: 1px;
+
+  /* TEXT CapdaS/T1 */
+  color: #151a17;
+}

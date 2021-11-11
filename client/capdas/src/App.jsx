@@ -1,15 +1,19 @@
-
-import './App.css';
+import { ThemeProvider } from 'styled-components';
 import CapdaS from "./CapdaS";
+import GlobalStyles from './components/styles/Global';
+import Theme from "./components/styles/Theme";
 
-function App() {
 
+export default function App() {
 
   return (
 
-      <CapdaS />
+    <ThemeProvider theme={Theme}>
+      <>
+        <GlobalStyles />
+        <CapdaS />
+      </>
+    </ThemeProvider>
 
   );
 }
-
-export default App;

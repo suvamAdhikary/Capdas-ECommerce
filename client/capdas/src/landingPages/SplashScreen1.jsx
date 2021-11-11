@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import styled from "styled-components";
 import { Button } from "./utils/Button";
 
@@ -62,9 +64,18 @@ export default function SplashScreen1() {
                 <p>We offer Sustainable clothing as we select Utility above price.</p>
                 <img src="assets/landingPages/SplashScreen1.svg" alt="splash1" />
             </Splash>
+
+
             <ButtonPosition>
-                <Button>Skip</Button>
-                <Button>Next</Button>
+
+                <Link to="/signup">
+                    <Button>Skip</Button>
+                </Link>
+
+                <Link to="/ss2">
+                    <Button>Next</Button>
+                </Link>
+                
             </ButtonPosition>
 
         </>

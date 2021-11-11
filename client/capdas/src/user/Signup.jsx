@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Wrapper from "./utils/Wrapper";
 import { NameInput, Label, EmailInput, PasswordInput, CheckBox, Form } from "./utils/Input";
 import { Aggrement, AggrementWrapper } from "./utils/Aggrement";
@@ -53,8 +54,15 @@ export default function Signup() {
             <Cross />
             <Heading />
             <ToggleWrapper>
-                <ToggleBtn>Sign Up</ToggleBtn>
-                <ToggleBtn>Sign In</ToggleBtn>
+
+                <Link to="#" >
+                    <ToggleBtn>Sign Up</ToggleBtn>
+                </Link>
+
+                <Link to="/signin" >
+                    <ToggleBtn>Sign In</ToggleBtn>
+                </Link>
+
             </ToggleWrapper>
             <Form handleSubmit={handleSubmit}>
             <Label>
