@@ -9,7 +9,7 @@ import Signup from "./user/Signup";
 import { Hp } from "./Homepage/Homepage";
 import AddAddress from "./user/AddAddress";
 import Login from "./user/Login";
-
+import {PopUp} from "../src/PopUp/PopUp"
 
 
 export default function CapdaS() {
@@ -18,7 +18,7 @@ export default function CapdaS() {
 
     return (<>
 
-        { showNav ? <HeaderNav /> : null }
+        {/* { showNav ? <HeaderNav /> : null }
 
         <Routes>
 
@@ -27,7 +27,8 @@ export default function CapdaS() {
             
         </Routes>
 
-        { showNav ? <FooterNav /> : null }
+        {showNav ? <FooterNav /> : null}; */}
+        <PopUp/>
 
     </>)
 
