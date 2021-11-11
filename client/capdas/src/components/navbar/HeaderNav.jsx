@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import styled from "styled-components";
 import Heading from "../Heading";
 import NavButton from "./NavButton";
@@ -43,21 +45,41 @@ margin-bottom: 5px;
 export default function HeaderNav() {
 
     return <HeaderNavbar>
+
         <SandwichWrapper>
+
+            <Link to="/menu">
             <img src="assets/menu.svg" alt="sandwitch" />
+            </Link>
+
+            <Link to="/">
             <Heading />
+            </Link>
+
         </SandwichWrapper>
+
+
         <Nav>
+
+            <Link to="/search">
             <NavButton>
                 <Img src="assets/SearchIcon.svg" alt="search icon"/>
             </NavButton>
+            </Link>
+
+            <Link to="/wishlist">
             <NavButton>
                 <Img src="assets/WishListIcon.svg" alt="wishlist icon"/>
             </NavButton>
+            </Link>
+
+            <Link to="/bag">
             <NavButton>
                 <Img src="assets/BagIcon.svg" alt="bag icon"/>
             </NavButton>
+            </Link>
 
         </Nav>
+
     </HeaderNavbar>
 };

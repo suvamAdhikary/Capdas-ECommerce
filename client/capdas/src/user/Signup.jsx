@@ -22,11 +22,15 @@ export default function Signup() {
 
         try {
 
-            await base.post('/register', userDetails ,{
+            const { data } = await base.post('/register', userDetails ,{
                 mode: 'same-origin'
             });
 
+            localStorage.setItem('CapdaS_user_token', JSON.stringify(data?.token));
+            localStorage.setItem('CapdaS_user_id', JSON.stringify(data?.user?._id));
+            
         } catch (err) {
+
             console.log(err.message);
         }
 

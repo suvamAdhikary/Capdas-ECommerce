@@ -1,5 +1,7 @@
 const express = require("express");
 
+const cors = require('cors');
+
 const googlePassport = require("./configs/google.passport");
 
 const fbPassport = require("./configs/facebook.passport");
@@ -9,9 +11,9 @@ const app = express();
 const { body } = require("express-validator");
 
 app.use(express.urlencoded({ extended: false }));
-
+// app.use(cors());
 app.use(express.json());
-
+app.options('*', cors());
 app.use(googlePassport.initialize());
 app.use(fbPassport.initialize());
 
