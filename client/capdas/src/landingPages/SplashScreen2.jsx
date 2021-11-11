@@ -33,13 +33,34 @@ const Splash = styled.div`
         color: #151A17;
     }
 
-    div {
+    .status {
+        position: absolute;
+        width: 30px;
+        height: 10px;
+        left: 173px;
+        top: 696px;
+        display: flex;
+        gap: 10px;
+    }
+
+    .status > div {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 1px solid black; 
+    }
+    .s2 {
+        background: #6C8072;
+    }
+
+    .btns {
         position: absolute;
         left: 24px;
         top: 740px;
         display: flex;
         gap: 24px;
     }
+
 `;
 
 export default function SplashScreen2() {
@@ -48,7 +69,13 @@ export default function SplashScreen2() {
             <Splash>
                 <p>We believe in Conscious Consumerism and not in conspicous consumerism.</p>
                 <img src="assets/landingPages/SplashScreen2.png" alt="splash2" />
-                <div>
+
+                <div className="status">
+                    <div></div>
+                    <div className="s2"></div>
+                </div>
+
+                <div className="btns">
                     <Link to="/signup">
                         <Button>Skip</Button>
                     </Link>

@@ -46,6 +46,26 @@ const Splash = styled.div`
         letter-spacing: 1px;
         color: #151A17;
     }
+
+    .status {
+        position: absolute;
+        width: 30px;
+        height: 10px;
+        left: 173px;
+        top: 696px;
+        display: flex;
+        gap: 10px;
+    }
+
+    .status > div {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 1px solid black; 
+    }
+    .s1 {
+        background: #6C8072;
+    }
 `;
 
 const ButtonPosition = styled.div`
@@ -63,8 +83,12 @@ export default function SplashScreen1() {
                 <h1>Welcome to CapdaS</h1>
                 <p>We offer Sustainable clothing as we select Utility above price.</p>
                 <img src="assets/landingPages/SplashScreen1.svg" alt="splash1" />
-            </Splash>
 
+                <div className="status">
+                    <div className="s1"></div>
+                    <div></div>
+                </div>
+            </Splash>
 
             <ButtonPosition>
 
