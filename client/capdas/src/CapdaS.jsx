@@ -13,7 +13,7 @@ import { Hp } from "./Homepage/Homepage";
 import Category from "./category/Category";
 import { Bag } from "./BagPage/Bag";
 import AddAddress from "./user/AddAddress";
-import {PopUp} from "../src/PopUp/PopUp"
+import {PopUp as Menu} from "../src/PopUp/PopUp"
 import { Payment } from "./payment/Payment";
 import { CardDetail } from "./cardDetails/CardDetail";
 import { Success } from "./successPage/Success";
@@ -35,6 +35,7 @@ export default function CapdaS() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/signin" element={<Login />} />
             <Route path="/CapdaS" exact element={<Hp />} />
+            <Route path="/menu" element={<Menu />} />
             <Route path="/categories" element={<Category />} />
             <Route path="/bag" element={<Bag />} />
             <Route path="/newAddress" element={<AddAddress />} />
@@ -45,8 +46,6 @@ export default function CapdaS() {
         </Routes>
 
         {showNav ? <FooterNav /> : null}
-        <PopUp/>
 
     </>)
-
 }
