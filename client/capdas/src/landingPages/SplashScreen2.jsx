@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import styled from "styled-components";
 import { Button } from "./utils/Button";
 
@@ -40,14 +42,6 @@ const Splash = styled.div`
     }
 `;
 
-// const ButtonPosition = styled.div`
-//     position: absolute;
-//     left: 24px;
-//     top: 740px;
-//     display: flex;
-//     gap: 24px;
-// `;
-
 export default function SplashScreen2() {
     return (
         <>
@@ -55,8 +49,13 @@ export default function SplashScreen2() {
                 <p>We believe in Conscious Consumerism and not in conspicous consumerism.</p>
                 <img src="assets/landingPages/SplashScreen2.png" alt="splash2" />
                 <div>
-                    <Button>Skip</Button>
-                    <Button>Next</Button>
+                    <Link to="/signup">
+                        <Button>Skip</Button>
+                    </Link>
+
+                    <Link to="/signup">
+                    <   Button>Next</Button>
+                    </Link>
                 </div>
             </Splash>
 
