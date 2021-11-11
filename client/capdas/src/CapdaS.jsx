@@ -13,9 +13,11 @@ import { Hp } from "./Homepage/Homepage";
 import Category from "./category/Category";
 import { Bag } from "./BagPage/Bag";
 import AddAddress from "./user/AddAddress";
+import {PopUp} from "../src/PopUp/PopUp"
 import { Payment } from "./payment/Payment";
 import { CardDetail } from "./cardDetails/CardDetail";
 import { Success } from "./successPage/Success";
+
 
 
 export default function CapdaS() {
@@ -42,7 +44,8 @@ export default function CapdaS() {
             
         </Routes>
 
-        { showNav ? <FooterNav /> : null }
+        {showNav ? <FooterNav /> : null}
+        <PopUp/>
 
     </>)
 
