@@ -57,6 +57,9 @@ font-weight: 700;
 line-height: 29.76px;
 letter-spacing: 1px;
     }
+    img{
+        margin-bottom: 15px;
+    }
 }
 div:nth-child(8){
 height:59px;
