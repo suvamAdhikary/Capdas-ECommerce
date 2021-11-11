@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import rightArrow from "../Homepage/images/rightArrow.png";
-import homepage from "../Homepage/images/homepage.png";
+import Cross from "../utils/Cross.jsx"
 const Top = styled.div`
 width: 100%;
 height: 45px;
@@ -41,6 +41,9 @@ display:flex;
 flex-direction: column;
 box-sizing: border-box;
 padding: 10px;
+border-radius: 10px;
+color: #151A17;
+
 div{
     display:flex;
     justify-content: space-between;
@@ -57,14 +60,24 @@ font-weight: 700;
 line-height: 29.76px;
 letter-spacing: 1px;
     }
-    img{
-        margin-bottom: 15px;
-    }
 }
 div:nth-child(8){
 height:59px;
 }
-              `
+ button{
+width:144px;
+height: 46px;
+background-color: #56675B;
+border-radius: 10px;
+border: none;
+color: #FFFFF7;
+font-size: 24px;
+font-weight: 700;
+line-height: 30px;
+letter-spacing: 1px;
+text-align: center;
+
+}   `
 
 
 export const PopUp = () => {
@@ -73,9 +86,9 @@ export const PopUp = () => {
        
         <Container>
             <div>
-        <SVG xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+        {/* <SVG xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
 <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" fill="#151A17"/>
-</SVG>
+</SVG> */}
                 <Flex>
                     <div>
                     <div><p>Mend</p></div>
@@ -93,7 +106,7 @@ export const PopUp = () => {
                     <div><img src={rightArrow} alt="" /></div></div>
                     <div><div><p>Work with Us</p></div>
                     <div><img src={rightArrow} alt="" /></div></div>
-                    <div><p></p></div>
+                    <div><button>Sign Up/In</button></div>
 </Flex>
             </div>
         </Container>
