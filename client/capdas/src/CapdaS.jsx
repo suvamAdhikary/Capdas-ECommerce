@@ -12,11 +12,13 @@ import { Account } from "./AccountPage/Account";
 import { Hp } from "./Homepage/Homepage";
 import { Menu } from "./Menu/Menu";
 import Category from "./category/Category";
+import WomenCategory from "./womencategory/WomenCategory";
 import { Bag } from "./BagPage/Bag";
 import AddAddress from "./user/AddAddress";
 import { Payment } from "./payment/Payment";
 import { CardDetail } from "./cardDetails/CardDetail";
 import { Success } from "./successPage/Success";
+
 
 
 const noShowTop = ["/", "/ss2", "/signup", "/login", "/menu", "/newAddress", "/bag", "/payment", "/card", "/success"];
@@ -64,4 +66,34 @@ export default function CapdaS() {
         {showFooterNav ? <FooterNav /> : null}
 
     </>)
+}
+
+
+
+export default function CapdaS() {
+  const [showNav, setShowNav] = useState(true);
+
+  return (
+    <>
+      {showNav ? <HeaderNav /> : null}
+
+      <Routes>
+        <Route path="/" element={<SplashScreen1 />} />
+        <Route path="/ss2" element={<SplashScreen2 />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/signin" element={<Login />} />
+        <Route path="/account" element={<Account />} />
+        <Route path="/CapdaS" exact element={<Hp />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/categories" element={<Category />} />
+        <Route path="/bag" element={<Bag />} />
+        <Route path="/newAddress" element={<AddAddress />} />
+        <Route path="/payment" element={<Payment />} />
+        <Route path="/card" element={<CardDetail />} />
+        <Route path="/success" element={<Success />} />
+      </Routes>
+
+      {showNav ? <FooterNav /> : null}
+    </>
+  );
 }

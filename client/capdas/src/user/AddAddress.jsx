@@ -8,7 +8,22 @@ import Button from "../utils/Button";
 
 
 const Input = styled.input`
+    
+    border: 0.5px solid #151A17;
+    border-radius: 10px;
+    color: #151A17;
 
+
+    @media screen and (max-width: 375px) {
+        width: 327px;
+        height: 45px;
+        margin: 20px 0;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19.84px;
+        letter-spacing: 1px;
+        padding-left: 10px;
+    }
 `;
 
 const initState = {
@@ -53,7 +68,7 @@ export default function AddAddress() {
     return (
         <Wrapper>
             <Cross />
-            <p>Add Address</p>
+            <p className="addaddress__heading">Add Address</p>
             <Form>
                 <Input
                     type="text"
