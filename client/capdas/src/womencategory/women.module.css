@@ -5,6 +5,7 @@
   margin: auto;
   overflow-y: scroll;
   scrollbar-width: none;
+  position: relative;
 }
 
 .containerDiv {
@@ -111,7 +112,7 @@
   margin: auto;
   margin-top: 5px;
   margin-bottom: 0px;
-  margin-left: 128px;
+  margin-left: 90px;
 }
 
 .priceDiv {
@@ -141,7 +142,7 @@
 .dPriceDiv {
   width: 75px;
   height: 20px;
-  margin-left: 50px;
+  margin-left: 44.5px;
 }
 
 .ogPriceDiv {
@@ -181,8 +182,15 @@
   border-radius: 0px;
   left: 17px;
   background-color: #fffff7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
 }
-.wishlistImage {
-  margin-top: 3px;
-  margin-left: 2px;
+.filterIcon {
+  position: absolute;
+  top: 620px;
+  left: 288px;
+  width: 48px;
+  height: 48px;
 }

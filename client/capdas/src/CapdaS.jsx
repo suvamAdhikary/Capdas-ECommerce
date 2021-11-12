@@ -13,6 +13,7 @@ import { Hp } from "./Homepage/Homepage";
 import { Menu } from "./Menu/Menu";
 import Category from "./category/Category";
 import WomenCategory from "./womencategory/WomenCategory";
+import {ProductPage} from "./ProductPage/productPage"
 import { Bag } from "./BagPage/Bag";
 import AddAddress from "./user/AddAddress";
 import { Payment } from "./payment/Payment";
@@ -62,7 +63,7 @@ export default function CapdaS() {
             <Route path="/payment" element={<Payment />} />
             <Route path="/card" element={<CardDetail />} />
             <Route path="/success" element={<Success />} />
-            <Route path="/testing" element={<WomenCategory />} />
+            <Route path="/testing" element={<ProductPage />} />
 
         </Routes>
 
