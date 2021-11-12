@@ -1,7 +1,9 @@
 import styled from "styled-components"
-import Frame61 from "../Homepage/images/Frame61.png"
+import Frame61 from "../Homepage/images/Frame61.png";
+import Button from "../user/utils/Button"
 const Main = styled.div`
-p:nth-child(4){
+
+p:nth-child(5){
 font-size: 16px;
 font-weight: 700;
 line-height: 20px;
@@ -9,13 +11,12 @@ letter-spacing: 1px;
 text-align: left;
 margin: 7px 0 0 24px;
 }
-div:nth-child(5){
+div:nth-child(6){
     width: 326px;
     margin: auto;
     margin-bottom: 10px !important;
-    /* border: 1px solid black; */
 }
-div:nth-child(5) >p{
+div:nth-child(6) >p{
 color: #151A17;
 font-size: 12px;
 font-weight: 400;
@@ -23,23 +24,22 @@ line-height: 16px;
 letter-spacing: 1px;
 text-align: left;
 }
-div:nth-child(7){
+div:nth-child(8){
 width:326px;
-/* border: 1px solid black; */
 margin: auto;
 display: flex;
 flex-direction: row;
 }
-div:nth-child(7)> svg{
+div:nth-child(8)> svg{
     margin: 0 3px 15px 3px;
 }
-div:nth-child(9){
+div:nth-child(10){
     width: 326px;
     margin: auto;
     margin-bottom: 10px !important;
 }
 
-div:nth-child(9)>p{
+div:nth-child(10)>p{
 color: #151A17;
 font-size: 12px;
 font-weight: 400;
@@ -51,7 +51,6 @@ text-align: left;
 const Preview = styled.div`
 width: 327px;
 height: 490px;
-border: 1px solid black;
 margin: 25px 24px 20px 24px;
 background-color: #56675B;
 `;
@@ -64,7 +63,6 @@ margin: auto;
 flex-direction: row;
 justify-content: space-between;
   & div{
-  border: 1px solid black;
   width: 64px;
   height: 64px;
   background-color: #56675B;
@@ -122,6 +120,7 @@ export const ProductPage = () => {
 <path d="M5.5 7.41659L8.59167 9.66659L7.40833 6.03325L10.5 3.83325H6.70833L5.5 0.083252L4.29167 3.83325H0.5L3.59167 6.03325L2.40833 9.66659L5.5 7.41659Z" fill="#009944"/>
 </svg></p></div>
         </Div>
+         <Button>Add to Bag</Button>
         <p>Rs.2499</p>
         <div><p>Handwoven Maheshwari Silk By Cotton. Handwoven, comfortable and elegant Maheshwari saree in Plain white with gold and grey stripes across the body, embellished with a border in black and dull gold. <br /> Proudly Made in India, using 100% organic cotton.</p></div>
         <Highlight>Size</Highlight>
@@ -155,6 +154,6 @@ export const ProductPage = () => {
         <Highlight>Product Care</Highlight>
         <div><p>Machine wash cold. <br /> Lay flat to dry. <br /> Iron lightly if needed (but not directly on the print!) Since it's 100% cotton, the garment may shrink in high heat washing or drying.</p></div>
         <img src={Frame61} alt="" />
-        
+       
     </Main>
 }
