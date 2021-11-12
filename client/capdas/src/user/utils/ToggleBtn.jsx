@@ -13,7 +13,7 @@ const Btn = styled.button`
     border: none;
 `;
 
-export function ToggleBtn({children}) {
+export function ToggleBtn({children, handleToggle}) {
 
     return <Btn>{children}</Btn>
 }

@@ -36,6 +36,13 @@ const GlobalStyles = createGlobalStyle`
       font-family: 'Cabinet Grotesk', sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+
+      @media screen and (max-width: 375px) {
+
+        overflow: scroll;
+
+        height: 767px !important;
+      }
     }
 
     code {

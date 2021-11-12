@@ -21,8 +21,8 @@ import { Success } from "./successPage/Success";
 
 
 
-const noShowTop = ["/", "/ss2", "/signup", "/login", "/menu", "/newAddress", "/bag", "/payment", "/card", "/success"];
-const noShowBot = ["/", "/ss2", "/signup", "/login", "/menu", "/newAddress"];
+const noShowTop = ["/", "/ss2", "/signup", "/signin", "/menu", "/newaddress", "/bag", "/payment", "/card", "/success"];
+const noShowBot = ["/", "/ss2", "/signup", "/signin", "/menu", "/newaddress" ];
 
 
 export default function CapdaS() {

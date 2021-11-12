@@ -17,6 +17,14 @@ const Wrapper = styled.div`
 
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+
+    @media screen and (max-width: 375px) {
+
+        position: absolute;
+        bottom: 40px;
+        width: 80px;
+    }
 `;
 
 export function Google(){

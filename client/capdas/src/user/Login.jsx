@@ -9,6 +9,7 @@ import { base } from "../utils/request";
 import Heading from "../components/Heading";
 import { ToggleBtn, ToggleWrapper } from "./utils/ToggleBtn";
 import Cross from "./utils/Cross";
+import Parent from "./utils/Parent";
 
 
 export default function Login() {
@@ -51,7 +52,7 @@ export default function Login() {
     }
 
     const { email, password } = userDetails;
-    return (
+    return (<><Parent>
         <Wrapper>
             <Cross />
             <Heading />
@@ -88,7 +89,7 @@ export default function Login() {
             <AggrementWrapper>
             <CheckBox />
                 {" "}
-                <Aggrement>I agree to the Terms of Service and Privacy Policy</Aggrement>
+                <Aggrement>Remember password</Aggrement>
             </AggrementWrapper>
             <Button>Sign In</Button>
             </Form>
@@ -98,5 +99,5 @@ export default function Login() {
                 <Fb />
             </SocialWrapper>
         </Wrapper>
-    )
+    </Parent></>)
 }

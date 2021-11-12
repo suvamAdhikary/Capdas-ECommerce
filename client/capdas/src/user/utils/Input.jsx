@@ -7,12 +7,12 @@ const Input = styled.input`
     @media screen and (max-width: 375px) {
         width: 208px;
         height: 38px;
+        margin-bottom: -20px;
 
         &[type="checkbox"] {
             width: 10px;
             height: 10px;
-            margin-top: 6.5px;
-            margin-right: 5px;
+
         }
     }
 
@@ -21,6 +21,14 @@ const Input = styled.input`
 const InputWrapper = styled.label`
 
     text-align: left;
+    color: #000000;
+
+    @media only screen and (max-width: 375px) {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 14.88px;
+        letter-spacing: 1px;
+    }
 
 `;
 
@@ -35,16 +43,8 @@ const MainForm = styled.form`
         width: 100%;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
-        input {
-            
-            @media screen and (max-width: 375px) {
-
-                width: 151px;
-                height: 45px;
-
-            }
-        }
+        justify-content: flex-start;
+        margin-left: 40px;
     }
 
 
