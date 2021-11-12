@@ -29,6 +29,10 @@ export default function Signup() {
 
             localStorage.setItem('CapdaS_user_token', JSON.stringify(data?.token));
             localStorage.setItem('CapdaS_user_id', JSON.stringify(data?.user?._id));
+
+            if(data) {
+                return window.location.href = '/CapdaS'
+            }
             
         } catch (err) {
 
@@ -95,7 +99,7 @@ export default function Signup() {
             <AggrementWrapper>
             <CheckBox />
                 {" "}
-                <Aggrement>I agree to the <span>Terms of Service</span> and <span>Privacy Policy</span></Aggrement>
+                <Aggrement>I agree to the Terms of Service and Privacy Policy</Aggrement>
             </AggrementWrapper>
             <Button>Sign Up</Button>
             </Form>

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import styled from "styled-components"
 import Button from "../utils/Button";
 
@@ -121,7 +123,9 @@ export const CardDetail = () => {
     return (
         <>
             <Back>
-                <img src="assets/leftArrow.png" alt="back" />
+                <Link to="/payment">
+                    <img src="assets/leftArrow.png" alt="back" />
+                </Link>
             </Back>
             <Title>
                 <p>Payment</p>
@@ -140,7 +144,11 @@ export const CardDetail = () => {
                 <input className="inp_number"  type="number" placeholder="Crad Number" />
                 <input className="inp_expiry"  type="number" placeholder="Expiry" />
                 <input className="inp_cvv"  type="number" placeholder="CVV" />
-                <Button> Confirm Payment </Button>
+
+                <Link to="/success">
+                    <Button> Confirm Payment </Button>
+                </Link>
+
             </Form>
         </>
     );

@@ -1,39 +1,60 @@
 
-import { Route, Routes } from "react-router-dom";
-import { useState } from "react";
-import {ProductPage} from "./ProductPage/productPage"
+import { Route, Routes, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+
 import HeaderNav from "./components/navbar/HeaderNav";
 import FooterNav from "./components/navbar/FooterNav";
-import {PopUpp} from "./PopUp/PopUp"
 import SplashScreen1 from "./landingPages/SplashScreen1";
 import SplashScreen2 from "./landingPages/SplashScreen2";
 import Signup from "./user/Signup";
 import Login from "./user/Login";
+import { Account } from "./AccountPage/Account";
 import { Hp } from "./Homepage/Homepage";
+import { Menu } from "./Menu/Menu";
 import Category from "./category/Category";
+import WomenCategory from "./womencategory/WomenCategory";
+import {ProductPage} from "./ProductPage/productPage"
 import { Bag } from "./BagPage/Bag";
 import AddAddress from "./user/AddAddress";
-// import {PopUp as Menu} from "../src/PopUp/PopUp"
 import { Payment } from "./payment/Payment";
 import { CardDetail } from "./cardDetails/CardDetail";
 import { Success } from "./successPage/Success";
 
 
 
+const noShowTop = ["/", "/ss2", "/signup", "/login", "/menu", "/newAddress", "/bag", "/payment", "/card", "/success"];
+const noShowBot = ["/", "/ss2", "/signup", "/login", "/menu", "/newAddress"];
+
+
 export default function CapdaS() {
-    const [showNav, setShowNav] = useState(true);
+    const [showHeaderNav, setShowHeaderNav] = useState(true);
+    const [showFooterNav, setShowFooterNav] = useState(true);
+
+    const location = useLocation();
+
+
+    useEffect(() => {
+
+        if(noShowTop.includes(location.pathname)) setShowHeaderNav(false);
+
+        if(noShowBot.includes(location.pathname)) setShowFooterNav(false);
+
+        return;
+
+    }, [location.pathname]);
 
 
     return (<>
 
-        { showNav ? <HeaderNav /> : null }
+        { showHeaderNav ? <HeaderNav /> : null }
 
-        {/* <Routes>
+        <Routes>
             
             <Route path="/" element={<SplashScreen1 />} />
             <Route path="/ss2" element={<SplashScreen2 />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/signin" element={<Login />} />
+            <Route path="/account" element={<Account />} />
             <Route path="/CapdaS" exact element={<Hp />} />
             <Route path="/menu" element={<Menu />} />
             <Route path="/categories" element={<Category />} />
@@ -42,11 +63,11 @@ export default function CapdaS() {
             <Route path="/payment" element={<Payment />} />
             <Route path="/card" element={<CardDetail />} />
             <Route path="/success" element={<Success />} />
-            
-        </Routes> */}
+            <Route path="/testing" element={<ProductPage />} />
 
-        {/* {showNav ? <FooterNav /> : null} */}
-        {/* <PopUpp/> */}
-        <ProductPage/>
+        </Routes>
+
+        {showFooterNav ? <FooterNav /> : null}
+
     </>)
 }

@@ -31,6 +31,7 @@ const productController = require("./controllers/product.controller");
 const brandController = require("./controllers/brand.controller");
 const categoryController = require("./controllers/category.controller");
 const subCategoryController = require("./controllers/subCategory.controller");
+const cartController = require("./controllers/cart.controller");
 
 
 app.use("/users", userController);
@@ -38,6 +39,7 @@ app.use("/products", productController);
 app.use("/brands", brandController);
 app.use("/categories", categoryController);
 app.use("/sub_categories", subCategoryController );
+app.use("/carts", cartController);
 
 
 

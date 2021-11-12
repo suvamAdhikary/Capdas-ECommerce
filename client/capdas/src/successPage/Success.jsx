@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import styled from "styled-components"
 import Button from "../utils/Button";
 
@@ -34,7 +36,11 @@ export const Success = () => {
             <p>Placed your order successfully.</p>
             <p>Thank you for choosing CapdaS.</p>
         </Message>
-        <Button>Continue Shopping</Button>
+
+        <Link to="/CapdaS">
+            <Button>Continue Shopping</Button>
+        </Link>
+
         </>
     );
 }
