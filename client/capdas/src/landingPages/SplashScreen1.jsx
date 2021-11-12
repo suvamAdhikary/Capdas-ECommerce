@@ -1,7 +1,9 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import styled from "styled-components";
 import { Button } from "./utils/Button";
+import StartScreen from "./StartScreen";
 
 const Splash = styled.div`
     img{
@@ -77,7 +79,18 @@ const ButtonPosition = styled.div`
 `;
 
 export default function SplashScreen1() {
-    return (
+
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            setLoading(true);
+        }, 2500);
+
+        return () => clearTimeout(timeout);
+    }, [loading]);
+
+    return ( (!loading) ? <StartScreen /> :
         <>
             <Splash>
                 <h1>Welcome to CapdaS</h1>
