@@ -1,4 +1,3 @@
-
 import { Route, Routes } from "react-router-dom";
 import { useState } from "react";
 
@@ -17,36 +16,32 @@ import AddAddress from "./user/AddAddress";
 import { Payment } from "./payment/Payment";
 import { CardDetail } from "./cardDetails/CardDetail";
 import { Success } from "./successPage/Success";
-
-
+import WomenCategory from "./womencategory/WomenCategory";
 
 export default function CapdaS() {
-    const [showNav, setShowNav] = useState(true);
+  const [showNav, setShowNav] = useState(true);
 
+  return (
+    <>
+      {showNav ? <HeaderNav /> : null}
 
-    return (<>
+      <Routes>
+        <Route path="/" element={<SplashScreen1 />} />
+        <Route path="/ss2" element={<SplashScreen2 />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/signin" element={<Login />} />
+        <Route path="/account" element={<Account />} />
+        <Route path="/CapdaS" exact element={<Hp />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/categories" element={<Category />} />
+        <Route path="/bag" element={<Bag />} />
+        <Route path="/newAddress" element={<AddAddress />} />
+        <Route path="/payment" element={<Payment />} />
+        <Route path="/card" element={<CardDetail />} />
+        <Route path="/success" element={<Success />} />
+      </Routes>
 
-        { showNav ? <HeaderNav /> : null }
-
-        <Routes>
-            
-            <Route path="/" element={<SplashScreen1 />} />
-            <Route path="/ss2" element={<SplashScreen2 />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/signin" element={<Login />} />
-            <Route path="/account" element={<Account />} />
-            <Route path="/CapdaS" exact element={<Hp />} />
-            <Route path="/menu" element={<Menu />} />
-            <Route path="/categories" element={<Category />} />
-            <Route path="/bag" element={<Bag />} />
-            <Route path="/newAddress" element={<AddAddress />} />
-            <Route path="/payment" element={<Payment />} />
-            <Route path="/card" element={<CardDetail />} />
-            <Route path="/success" element={<Success />} />
-            
-        </Routes>
-
-        {showNav ? <FooterNav /> : null}
-
-    </>)
+      {showNav ? <FooterNav /> : null}
+    </>
+  );
 }

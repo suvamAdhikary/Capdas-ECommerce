@@ -1,0 +1,188 @@
+.mainDiv {
+  width: 375px;
+  height: 1200px;
+  /* border: 1px solid black; */
+  margin: auto;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.containerDiv {
+  width: 327px;
+  margin-left: 24px;
+  display: flex;
+  flex-direction: column;
+}
+.firstdiv {
+  display: flex;
+  flex-direction: row;
+}
+
+.leftarrow {
+  height: 12px;
+  width: 18px;
+  margin-left: 3px;
+  margin-top: 6px;
+}
+
+.productname {
+  width: 73px;
+  height: 27px;
+  margin-left: 100px;
+  color: #151a17;
+  font-family: Cabinet Grotesk;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 27px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 1px;
+}
+.seconddiv {
+  width: 327px;
+  height: 56px;
+  left: 24px;
+  margin-top: 15px;
+  background: #d5e6d5;
+  border-radius: 10px;
+}
+.infodiv {
+  width: 219px;
+  height: 30px;
+  margin-left: 54px;
+  margin-top: 13px;
+  font-family: Cabinet Grotesk;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #000000;
+}
+
+.clothsinfodiv {
+  width: 327px;
+  height: 119px;
+  margin-top: 15px;
+  font-family: Cabinet Grotesk;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #151a17;
+}
+
+.filterFooterDiv {
+  width: 327px;
+  border: 1px solid rgba(100, 95, 95, 0.171);
+  margin-top: 10px;
+  border-radius: 10px 10px 10px 10px;
+  margin-left: 24px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.filterDivSAree {
+  width: 327px;
+  height: 490px;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.sareeName {
+  width: 162px;
+  height: 22px;
+  font-family: Cabinet Grotesk;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 1px;
+  color: #151a17;
+  margin: auto;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  margin-left: 128px;
+}
+
+.priceDiv {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2px;
+  align-items: center;
+}
+
+.ratingDiv {
+  width: 38px;
+  height: 17px;
+  margin-left: 5px;
+  font-family: Cabinet Grotesk;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 1px;
+  /* Success */
+  color: #009944;
+  margin-top: 6px;
+}
+
+.dPriceDiv {
+  width: 75px;
+  height: 20px;
+  margin-left: 50px;
+}
+
+.ogPriceDiv {
+  width: 60px;
+  height: 12px;
+  font-family: Cabinet Grotesk;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 12px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 1px;
+
+  /* TEXT CapdaS/T3 */
+  color: #5b5f5d;
+  margin-top: 2px;
+  text-decoration: line-through;
+}
+.footerdiv {
+  position: absolute;
+  width: 327px;
+  height: 84px;
+  left: 0px;
+  top: 445px;
+
+  /* Background */
+  background: #fffff7;
+  border: 1px solid black;
+}
+
+.wishlistDiv {
+  position: absolute;
+  height: 22px;
+  width: 22px;
+  top: 454px;
+  border-radius: 0px;
+  left: 17px;
+  background-color: #fffff7;
+}
+.wishlistImage {
+  margin-top: 3px;
+  margin-left: 2px;
+}
