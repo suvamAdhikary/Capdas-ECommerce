@@ -88,7 +88,7 @@ export default function Login() {
             <AggrementWrapper>
             <CheckBox />
                 {" "}
-                <Aggrement>I agree to the <span>Terms of Service</span> and <span>Privacy Policy</span></Aggrement>
+                <Aggrement>I agree to the Terms of Service and Privacy Policy</Aggrement>
             </AggrementWrapper>
             <Button>Sign In</Button>
             </Form>
