@@ -1,4 +1,6 @@
+import { useState } from "react";
 import styled from "styled-components";
+import Toggle from "./utils/Toggle";
 
 const Tabs = styled.div`
 
@@ -203,6 +205,9 @@ const Tabs = styled.div`
 `;
 
 export const Account = () => {
+
+    const [toggle, setToggle] = useState(false);
+
     return (
         <>
             <Tabs>
@@ -233,6 +238,7 @@ export const Account = () => {
 
                 <div className="Tab5">
                     <p>Location Permission</p>
+                    <Toggle onChange={(e) => setToggle(e.target.true)} />
                 </div>
                 
             </Tabs>
