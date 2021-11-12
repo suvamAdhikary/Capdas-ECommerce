@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const CrossBtn = styled.button`
+const CrossBtn = styled.span`
 
     border: none;
 `;

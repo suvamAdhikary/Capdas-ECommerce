@@ -29,6 +29,25 @@ const MainForm = styled.form`
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+
+
+    div{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        input {
+            
+            @media screen and (max-width: 375px) {
+
+                width: 151px;
+                height: 45px;
+
+            }
+        }
+    }
+
+
 `;
 
 export function NameInput({ name, handleChange }) {

@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components"
 import rightArrow from "../Homepage/images/rightArrow.png";
 import Cross from "../user/utils/Cross"
@@ -93,6 +95,25 @@ margin-top: -10px;
 
 
 export const Menu = () => {
+    const [flag, setFlag] = useState(false);
+
+
+    const handleLogout = () => {
+
+        localStorage.setItem('CapdaS_user_token', JSON.stringify(null));
+
+    }
+
+    useEffect(() => {
+
+        let status = JSON.parse(localStorage.getItem('CapdaS_user_token'));
+        if(status) setFlag(true);
+
+        return;
+
+    }, []);
+
+
     return <>
         <Top></Top>
         <Container>
@@ -115,7 +136,9 @@ export const Menu = () => {
                     <div><img src={rightArrow} alt="" /></div></div>
                     <div><div><p>Work with Us</p></div>
                     <div><img src={rightArrow} alt="" /></div></div>
-                    <div><Btn>Sign Up/In</Btn></div>
+                    <Link to="/signup">
+                        <div><Btn onClick={handleLogout}>{!flag? "Sign Up/In" : "Logout"}</Btn></div>
+                    </Link>
 </Flex>
             </div>
         </Container>
