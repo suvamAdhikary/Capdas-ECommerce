@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { base } from "../utils/request";
+import Women from "./Women";
 import styles from "./women.module.css";
-const axios = require("axios");
+
 
 const WomenCategory = function () {
   const [womenCategoryData, setwomenCategoryData] = useState([]);
@@ -13,7 +15,7 @@ const WomenCategory = function () {
     try {
       const {
         data: { product },
-      } = await axios.get("http://localhost:6060/products");
+      } = await base.get("/products");
       setwomenCategoryData(product);
     } catch (err) {
       console.log(err);
@@ -53,40 +55,9 @@ const WomenCategory = function () {
         </div>
         {/* {div containig filter footer and one static card} */}
 
-        {womenCategoryData.map((e) => {
-          return (
-            <>
-              <div
-                className={styles.filterFooterDiv}
-                key={e._id}
-                onClick={() => {
-                  console.log(e.name);
-                }}
-              >
-                <img
-                  src={e.image[0]}
-                  alt="sareepic"
-                  className={styles.filterDivSAree}
-                />
-                <div className={styles.sareeName}>{e.name} </div>
-                <div className={styles.priceDiv}>
-                  <div className={styles.ratingDiv}>{e.rating}</div>
-                  <div className={styles.dPriceDiv}>{`Rs. ${e.price}`}</div>
-                  <div
-                    className={styles.ogPriceDiv}
-                  >{`Rs. ${e.discountPrice}`}</div>
-                </div>
-                <div className={styles.wishlistDiv}>
-                  <img
-                    className={styles.wishlistImage}
-                    src="../assets/WishListIcon.svg"
-                    alt=""
-                  />
-                </div>
-              </div>
-            </>
-          );
-        })}
+        {womenCategoryData.map((e) => (
+          <Women key={e?._id} e={e} />
+        ))}
       </div>
     </>
   );
