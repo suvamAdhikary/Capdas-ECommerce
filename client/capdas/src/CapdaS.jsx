@@ -1,6 +1,6 @@
 
-import { Route, Routes } from "react-router-dom";
-import { useState } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 import HeaderNav from "./components/navbar/HeaderNav";
 import FooterNav from "./components/navbar/FooterNav";
@@ -19,14 +19,29 @@ import { CardDetail } from "./cardDetails/CardDetail";
 import { Success } from "./successPage/Success";
 
 
-
+const noShowTop = ["/", "/ss2", "/signup", "/login", "/menu", "/newAddress", "/bag", "/payment", "/card", "/success"];
+const noShowBot = ["/", "/ss2", "/signup", "/login", "/menu", "/newAddress"];
 export default function CapdaS() {
-    const [showNav, setShowNav] = useState(true);
+    const [showHeaderNav, setShowHeaderNav] = useState(true);
+    const [showFooterNav, setShowFooterNav] = useState(true);
+
+    const location = useLocation();
+
+
+    useEffect(() => {
+
+        if(noShowTop.includes(location.pathname)) setShowHeaderNav(false);
+
+        if(noShowBot.includes(location.pathname)) setShowFooterNav(false);
+
+        return;
+
+    }, [location.pathname]);
 
 
     return (<>
 
-        { showNav ? <HeaderNav /> : null }
+        { showHeaderNav ? <HeaderNav /> : null }
 
         <Routes>
             
@@ -46,7 +61,7 @@ export default function CapdaS() {
             
         </Routes>
 
-        {showNav ? <FooterNav /> : null}
+        {showFooterNav ? <FooterNav /> : null}
 
     </>)
 }
