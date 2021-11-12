@@ -1,7 +1,7 @@
 
 import { Route, Routes } from "react-router-dom";
 import { useState } from "react";
-
+import {ProductPage} from "./ProductPage/productPage"
 import HeaderNav from "./components/navbar/HeaderNav";
 import FooterNav from "./components/navbar/FooterNav";
 import {PopUpp} from "./PopUp/PopUp"
@@ -46,6 +46,7 @@ export default function CapdaS() {
         </Routes> */}
 
         {/* {showNav ? <FooterNav /> : null} */}
-<PopUpp/>
+        {/* <PopUpp/> */}
+        <ProductPage/>
     </>)
 }
