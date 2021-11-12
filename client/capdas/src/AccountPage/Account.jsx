@@ -238,7 +238,7 @@ export const Account = () => {
 
                 <div className="Tab5">
                     <p>Location Permission</p>
-                    <Toggle onChange={(e) => setToggle(e.target.true)} />
+                    <Toggle onChange={(e) => setToggle(!toggle)} />
                 </div>
                 
             </Tabs>
