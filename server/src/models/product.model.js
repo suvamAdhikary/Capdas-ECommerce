@@ -4,25 +4,26 @@ const productSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
     price: { type: Number, required: true },
+    discountPrice: { type: Number, required: true },
     image: { type: Array, required: true },
-    size: { type: Array, required: true },
-    rating: { type: Number, required: true },
-    productDetails: { type: Array, required: true },
-    productCare: { type: Array, required: true },
+    size: { type: Array, required: false },
+    rating: { type: String, required: true },
+    productDetails: { type: Array, required: false },
+    productCare: { type: Array, required: false },
     categoryId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "categories",
-      required: true,
+      required: false,
     },
     subCategoryId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "subcategories",
-      required: true,
+      required: false,
     },
     brandId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "brand",
-      required: true,
+      required: false,
     },
   },
   {
