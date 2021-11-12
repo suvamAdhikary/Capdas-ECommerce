@@ -3,7 +3,6 @@ import { base } from "../utils/request";
 import Women from "./Women";
 import styles from "./women.module.css";
 
-
 const WomenCategory = function () {
   const [womenCategoryData, setwomenCategoryData] = useState([]);
 
@@ -58,6 +57,9 @@ const WomenCategory = function () {
         {womenCategoryData.map((e) => (
           <Women key={e?._id} e={e} />
         ))}
+        <div className={styles.filterIcon}>
+          <img src="../assets/filter_list.svg" alt="filtericon" />
+        </div>
       </div>
     </>
   );
