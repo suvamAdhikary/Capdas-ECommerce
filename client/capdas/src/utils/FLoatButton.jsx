@@ -18,9 +18,9 @@ const FloatButton = styled.button`
         color: #FFFFF7;
 `
 
-export default function FloatButtn ({children,handleSubmit}) {
+export default function FloatButtn ({children,handleAdd}) {
     return <>
-        <FloatButton onClick={handleSubmit}>{children}</FloatButton>
+        <FloatButton onClick={handleAdd}>{children}</FloatButton>
 
     </>
 }

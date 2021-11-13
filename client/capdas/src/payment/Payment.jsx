@@ -2,6 +2,7 @@ import styled from "styled-components";
 import leftArrow from "../Homepage/images/leftArrow.jpg"
 import Group from "../Homepage/images/Group.png";
 import { Link } from "react-router-dom";
+import Button from "../utils/Button";
 const Main = styled.div`
 button{
     width: 328px;
@@ -101,7 +102,7 @@ text-align: left;
 
 
 export const Payment = ({ children }) => {
-    return (
+    return (<>
         <Main>
             <CONTAINER>
                 <div>
@@ -142,5 +143,10 @@ export const Payment = ({ children }) => {
                 </button>
             </Tab>
         </Main>
-    );
+        <Link to="/card">
+            <Button>
+                Next
+            </Button>
+        </Link>
+    </>);
 }

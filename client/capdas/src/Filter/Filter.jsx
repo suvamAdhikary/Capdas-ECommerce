@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import styles from "./filter.module.css";
 
 const Filter = function () {
@@ -31,11 +32,13 @@ const Filter = function () {
         <div className={styles.FilterCategoryDiv}>
           <div className={styles.bannerDiv}>
             <div className={styles.bannerCrossDiv}>
+              <Link to="/women/sarees">
               <img
                 src="../assets/cross.svg"
                 alt="cross"
                 className={styles.bannerCrossimg}
               />
+              </Link>
             </div>
             <div className={styles.bannerCrossName}>Filters</div>
           </div>

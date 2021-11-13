@@ -4,6 +4,7 @@ import { base } from "../utils/request";
 import Frame61 from "../Homepage/images/Frame61.png";
 import FloatButtn from "../utils/FLoatButton";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Main = styled.div`
 
@@ -138,6 +139,52 @@ export const ProductPage = () => {
         }
     }
 
+    const handleAdd = async () => {
+
+        const id = JSON.parse(localStorage.getItem('CapdaS_user_id'));
+        const productId = obj.productId;
+
+        try {
+            const {data: {item : user}} = await base.get(`/users/${id}`);
+            const { data: { product } } = await base(`/products/${productId}`);
+
+            var bag;
+            let { data: { check }} = await base.get(`/carts/check/${id}/${productId}`);
+            // console.log(check, "check");
+            if(check !== null) {
+                return;
+                // bag = await base.patch(`/carts/${productId}/${id}`, {
+                //     quantity: check.quantity + 1,
+                //     price: check.price + product.price,
+                // });
+
+            } else {
+
+                bag = await base.post(`/carts`, {
+                    userId: id,
+                    productId: productId,
+                    name: product.name,
+                    price: product.price,
+                    quantity: 1,
+                    image: product.image[0],
+                })
+                
+   
+                await base.patch(`/users/${id}`, {
+                    totalPrice: +user.totalPrice + product.price,
+                    totalItemsInBag: +user.totalItemsInBag + 1,
+                })
+            }
+            // console.log(bag)
+            localStorage.setItem(`${id}_bag`, JSON.stringify(bag))
+            return;
+        } catch (err) {
+
+            console.log(err.message);
+        }
+
+
+    }
 
 
     useEffect(()=> {
@@ -171,7 +218,9 @@ export const ProductPage = () => {
 <path d="M5.5 7.41659L8.59167 9.66659L7.40833 6.03325L10.5 3.83325H6.70833L5.5 0.083252L4.29167 3.83325H0.5L3.59167 6.03325L2.40833 9.66659L5.5 7.41659Z" fill="#009944"/>
 </svg></p></div>
         </Div>
-         <FloatButtn>Add to Bag</FloatButtn>
+            <Link to="/bag">
+                <FloatButtn handleAdd={handleAdd}>Add to Bag</FloatButtn>
+            </Link>
 
         <p>Rs.{+productData?.price || 2499}</p>
 
