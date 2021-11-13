@@ -1,0 +1,71 @@
+.title{
+    font-family: Cabinet Grotesk;
+font-size: 22px;
+font-style: normal;
+font-weight: 400;
+line-height: 27px;
+letter-spacing: 1px;
+text-align: left;
+margin-left: 15px;
+}
+
+/* tailer details */
+#flax{
+    display: grid;
+    grid-template-columns: 120px 60px;
+    padding-left: 15px;
+    padding-top: 10px;
+    
+}
+/* display */
+#tailergird{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+#tailerimg{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 152px;
+    height: 161px;
+    /* padding-left: 18px; */
+    margin-left: 18px;
+    
+}
+#tailername{
+    font-family: Cabinet Grotesk;
+font-size: 15px;
+font-style: normal;
+font-weight: 700;
+line-height: 20px;
+letter-spacing: 1px;
+text-align: left;
+/* border: 1px solid red; */
+}
+
+.detailcontainer{
+    /* border: 1px solid red; */
+    margin-top: 30px;
+    /* margin-left: 20px; */
+    /* padding-left: 20px; */
+}
+#startext{
+    font-family: Cabinet Grotesk;
+font-size: 15px;
+font-style: normal;
+font-weight: 400;
+line-height: 17px;
+letter-spacing: 1px;
+text-align: left;
+color: #009944;
+}
+
+#exp{
+
+font-family: Cabinet Grotesk;
+font-size: 10px;
+line-height: 12px;
+display: flex;
+letter-spacing: 1px;
+margin-left: 15px;
+color: #7E817F;
+}

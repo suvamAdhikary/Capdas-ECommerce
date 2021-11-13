@@ -147,6 +147,7 @@ export const CardDetail = () => {
         }
     }
 
+
     const handleChange = (e) => {
         e.preventDefault();
 
@@ -158,6 +159,7 @@ export const CardDetail = () => {
         })
     }
 
+
     // const handleSubmit = () => {
     //     const {CardNumber, expiryMonth, expiryYear} = formdata;
     //     if(CardNumber.length === 16 && Number(expiryMonth) < 13 && Number(expiryYear) < 3000){
@@ -167,6 +169,7 @@ export const CardDetail = () => {
     //         alert("Check your card details");
     //     }
     // }
+
 
     const [name, no, expiry, cvv] = cardData;
 
