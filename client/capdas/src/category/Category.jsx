@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import styles from "./category.module.css";
+
 
 const Category = function () {
   const [showSubCategoryDiv, setShowSubCategoryDiv] = useState(false);
@@ -60,7 +62,9 @@ const Category = function () {
           <div className={styles.subcategory}>
             <div className={styles.subcategory_names}>Tops</div>
             <div className={styles.subcategory_names}>Tank Tops</div>
-            <div className={styles.subcategory_names}>Sarees</div>
+            <Link to="/women/sarees">
+              <div className={styles.subcategory_names}>Sarees</div>
+            </Link>
             <div className={styles.subcategory_names}>Shirts</div>
             <div className={styles.subcategory_names}>Accessories</div>
           </div>
