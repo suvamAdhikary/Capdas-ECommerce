@@ -1,10 +1,37 @@
 import styled from "styled-components";
 import { Form } from "./utils/Input";
-import Wrapper from "./utils/Wrapper";
 import Cross from "./utils/Cross";
 import { useState } from "react";
 import { base } from "../utils/request";
 import Button from "../utils/Button";
+
+
+const Wrapper = styled.main`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFFFF7;
+    position: absolute;
+    z-index: 9999;
+
+    @media screen and (max-width: 375px) {
+       
+        margin-top: 20.83px;
+
+        .addaddress__heading {
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 27.28px;
+            letter-spacing: 1px;
+            color: #151A17;
+        }
+
+        span {
+            position: absolute;
+            left: 20.83px;
+        }
+    }
+`;
 
 
 const Input = styled.input`
@@ -17,7 +44,7 @@ const Input = styled.input`
     @media screen and (max-width: 375px) {
         width: 327px;
         height: 45px;
-        margin: 20px 0;
+        margin: 20px 18.5px;
         font-weight: 700;
         font-size: 16px;
         line-height: 19.84px;

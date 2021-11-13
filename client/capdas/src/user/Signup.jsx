@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import Wrapper from "./utils/Wrapper";
 import { NameInput, Label, EmailInput, PasswordInput, CheckBox, Form } from "./utils/Input";
 import { Aggrement, AggrementWrapper } from "./utils/Aggrement";
@@ -9,9 +9,11 @@ import { base } from "../utils/request";
 import Heading from "../components/Heading";
 import { ToggleBtn, ToggleWrapper } from "./utils/ToggleBtn";
 import Cross from "./utils/Cross";
+import Parent from "./utils/Parent";
 
 
 export default function Signup() {
+
     const [userDetails, setUserDetails] = useState({
         name: "",
         email: "",
@@ -52,8 +54,26 @@ export default function Signup() {
         })
     }
 
+    // const handleSignin = () => {
+
+    //     window.location.href = "http://localhost:3000/signin";
+    //     // return;
+    // }
+
+    // const handleToggle = () => {
+
+    //     return ;
+    // }
+
+
+    const location = useLocation();
+
+    useEffect(() => {
+        // handleToggle();
+    }, [location])
+
     const { name, email, password } = userDetails;
-    return (
+    return (<><Parent>
         <Wrapper>
             <Cross />
             <Heading />
@@ -99,7 +119,7 @@ export default function Signup() {
             <AggrementWrapper>
             <CheckBox />
                 {" "}
-                <Aggrement>I agree to the Terms of Service and Privacy Policy</Aggrement>
+                <Aggrement>I agree to the <a href="/">Terms of Service</a> and <a href="/">Privacy Policy</a></Aggrement>
             </AggrementWrapper>
             <Button>Sign Up</Button>
             </Form>
@@ -109,5 +129,5 @@ export default function Signup() {
                 <Fb />
             </SocialWrapper>
         </Wrapper>
-    )
+    </Parent></>)
 }
