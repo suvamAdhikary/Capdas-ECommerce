@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const CrossBtn = styled.span`
-
+    background-color: #FFFFF7;
     border: none;
 `;
 
