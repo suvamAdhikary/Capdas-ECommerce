@@ -10,7 +10,7 @@ height: 45px;
 const Container = styled.div`
 width: 100%;
 height: 767px;
- background-image: url("https://5.imimg.com/data5/SELLER/Default/2020/8/KZ/LW/DW/29002038/casement-fabric-500x500.jpg");
+ background-image: url("https://user-images.githubusercontent.com/82999632/141643414-fb28f54e-f35d-4c2e-902d-3c31ed4b95a8.png");
 background-repeat: no-repeat;
 background-size: cover;
 
@@ -90,7 +90,8 @@ font-weight: 700;
 line-height: 30px;
 letter-spacing: 1px;
 text-align: center;
-margin-top: -10px;
+margin: -10px 65px 0 0;
+;
 `
 
 
