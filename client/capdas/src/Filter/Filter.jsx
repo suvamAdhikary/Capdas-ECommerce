@@ -1,10 +1,14 @@
 import { useState } from "react";
 import styles from "./filter.module.css";
 
-const Filter = function () {
+const Filter = function ({handleFilter}) {
   const [showFilterOption, setShowFilterOption] = useState(false);
   const [showFilterOption1, setShowFilterOption1] = useState(false);
   const [showFilterOption2, setShowFilterOption2] = useState(false);
+  const [filterBrand, setFilterBrand] = useState("");
+  const [filterPrice, setFilterPrice] = useState("");
+  const [filterSize, setFilterSize] = useState("");
+
   return (
     <>
       <div className={styles.mainPageDiv}>

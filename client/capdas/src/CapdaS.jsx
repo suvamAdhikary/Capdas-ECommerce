@@ -19,11 +19,12 @@ import AddAddress from "./user/AddAddress";
 import { Payment } from "./payment/Payment";
 import { CardDetail } from "./cardDetails/CardDetail";
 import { Success } from "./successPage/Success";
+import Filter from "./Filter/Filter";
 
 
 
-const noShowTop = ["/", "/ss2", "/signup", "/signin", "/menu", "/newaddress", "/bag", "/payment", "/card", "/success"];
-const noShowBot = ["/", "/ss2", "/signup", "/signin", "/menu", "/newaddress" ];
+const noShowTop = ["/", "/ss2", "/signup", "/signin", "/menu", "/newaddress", "/bag", "/payment", "/card", "/success", "/filter"];
+const noShowBot = ["/", "/ss2", "/signup", "/signin", "/menu", "/newaddress", "/filter" ];
 
 
 export default function CapdaS() {
@@ -35,9 +36,9 @@ export default function CapdaS() {
 
     useEffect(() => {
 
-        if(noShowTop.includes(location.pathname)) setShowHeaderNav(false);
+        noShowTop.includes(location.pathname) ? setShowHeaderNav(false) : setShowHeaderNav(true);
 
-        if(noShowBot.includes(location.pathname)) setShowFooterNav(false);
+        noShowBot.includes(location.pathname) ? setShowFooterNav(false): setShowFooterNav(true);
 
         return;
 
@@ -58,6 +59,7 @@ export default function CapdaS() {
             <Route path="/CapdaS" exact element={<Hp />} />
             <Route path="/menu" element={<Menu />} />
             <Route path="/categories" element={<Category />} />
+            <Route path="/filter" element={<Filter />} />
             <Route path="/bag" element={<Bag />} />
             <Route path="/newAddress" element={<AddAddress />} />
             <Route path="/payment" element={<Payment />} />

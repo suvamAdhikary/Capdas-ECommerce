@@ -10,6 +10,7 @@ box-sizing: border-box;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 `;
 
 const SandwichWrapper = styled.div`
@@ -18,7 +19,7 @@ const SandwichWrapper = styled.div`
     flex-direction: row;
 
 
-    div {margin-top: 5px;
+    div {margin-top: 0px;
         margin-left: 10px;
         color: #56675B;
         font-size: 24px;

@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { base } from "../utils/request";
 import Women from "./Women";
 import styles from "./women.module.css";
+
 
 const WomenCategory = function () {
   const [womenCategoryData, setwomenCategoryData] = useState([]);
@@ -58,7 +60,9 @@ const WomenCategory = function () {
           <Women key={e?._id} e={e} />
         ))}
         <div className={styles.filterIcon}>
-          <img src="../assets/filter_list.svg" alt="filtericon" />
+          <Link to="/filter">
+            <img src="../assets/filter_list.svg" alt="filtericon" />
+          </Link>
         </div>
       </div>
     </>
