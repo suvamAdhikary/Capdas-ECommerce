@@ -1,13 +1,29 @@
 import { useState } from "react";
 import styles from "./filter.module.css";
 
-const Filter = function ({handleFilter}) {
+const Filter = function () {
+
   const [showFilterOption, setShowFilterOption] = useState(false);
   const [showFilterOption1, setShowFilterOption1] = useState(false);
   const [showFilterOption2, setShowFilterOption2] = useState(false);
   const [filterBrand, setFilterBrand] = useState("");
   const [filterPrice, setFilterPrice] = useState("");
-  const [filterSize, setFilterSize] = useState("");
+
+
+  const handleBrandFilter = (e) => {
+    setFilterBrand(e);
+    
+  }
+
+  const handlePriceFilter = (e) => {
+    setFilterPrice(e);
+    
+  }
+
+  const handleApply = () => {
+    if(filterBrand.length) localStorage.setItem('capdasBrandFilter', JSON.stringify(filterBrand));
+    if(filterPrice > 0) localStorage.setItem('capdasPriceFilter', JSON.stringify(filterPrice));
+  }
 
   return (
     <>
@@ -35,8 +51,14 @@ const Filter = function ({handleFilter}) {
             </div>
             {showFilterOption ? (
               <div>
-                <div className={styles.filterCategoryDiv}>Local Brands</div>
-                <div className={styles.filterCategoryDiv}>National Brands</div>
+                <div
+                  className={styles.filterCategoryDiv}
+                  onClick={()=>handleBrandFilter("local")}
+                >Local Brands</div>
+                <div
+                  className={styles.filterCategoryDiv}
+                  onClick={()=>handleBrandFilter("national")}
+                >National Brands</div>
               </div>
             ) : null}
           </div>
@@ -53,9 +75,18 @@ const Filter = function ({handleFilter}) {
             </div>
             {showFilterOption1 ? (
               <div>
-                <div className={styles.filterCategoryDiv}>Less Than 1500</div>
-                <div className={styles.filterCategoryDiv}>Less Than 2500</div>
-                <div className={styles.filterCategoryDiv}>Above 2500</div>
+                <div
+                  className={styles.filterCategoryDiv}
+                  onClick={()=>handlePriceFilter(1500)}
+                >Less Than 1500</div>
+                <div
+                  className={styles.filterCategoryDiv}
+                  onClick={()=>handlePriceFilter(2500)}
+                >Less Than 2500</div>
+                <div
+                  className={styles.filterCategoryDiv}
+                  onClick={()=>handlePriceFilter(2501)}
+                >Above 2500</div>
               </div>
             ) : null}
           </div>
@@ -84,7 +115,7 @@ const Filter = function ({handleFilter}) {
               <div className={styles.filterPlusSign}>+</div>
             </div>
           </div>
-          <button className={styles.filterButton}>APPLY</button>
+          <button onClick={handleApply} className={styles.filterButton}>APPLY</button>
         </div>
       </div>
     </>
