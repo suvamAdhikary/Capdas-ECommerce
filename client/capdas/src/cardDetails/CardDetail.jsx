@@ -3,7 +3,7 @@ import { base } from "../utils/request"
 import styled from "styled-components"
 import Button from "../utils/Button";
 import { useEffect, useState } from "react";
-import axios from "axios";
+
 
 const Back = styled.div`
     position: absolute;
@@ -147,9 +147,18 @@ export const CardDetail = () => {
         }
     }
 
-    // const handleChange = (e) => {
-    //     const {name, value} = e.target;
-    // }
+
+    const handleChange = (e) => {
+        e.preventDefault();
+
+        const { name, value } = e.target;
+
+        setCardData({
+            ...cardData,
+            [name]: value,
+        })
+    }
+
 
     // const handleSubmit = () => {
     //     const {CardNumber, expiryMonth, expiryYear} = formdata;
@@ -160,6 +169,9 @@ export const CardDetail = () => {
     //         alert("Check your card details");
     //     }
     // }
+
+
+    const [name, no, expiry, cvv] = cardData;
 
     return (
         <>
@@ -181,10 +193,10 @@ export const CardDetail = () => {
                 <p>Enter your card details</p>
             </P>
             <Form>
-                <input onChange={(e) => handleChange(e)} className="inp_name" type="text" placeholder="Cardholder name" />
-                <input onChange={(e) => handleChange(e)} className="inp_number"  type="number" placeholder="Crad Number" />
-                <input onChange={(e) => handleChange(e)} className="inp_expiry"  type="number" placeholder="Expiry" />
-                <input onChange={(e) => handleChange(e)} className="inp_cvv"  type="number" placeholder="CVV" />
+                <input onChange={(e) => handleChange(e)} name="name" value={name} className="inp_name" type="text" placeholder="Cardholder name" />
+                <input onChange={(e) => handleChange(e)} name="no" value={no} className="inp_number"  type="text" placeholder="Crad Number" />
+                <input onChange={(e) => handleChange(e)} name="expiry" value={expiry} className="inp_expiry"  type="text" placeholder="Expiry" />
+                <input onChange={(e) => handleChange(e)} name="cvv" value={cvv} className="inp_cvv"  type="password" placeholder="CVV" />
 
                 <Link to="/success">
                     <Button> Confirm Payment </Button>
