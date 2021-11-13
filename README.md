@@ -13,7 +13,7 @@ Clone the project from Command prompt or Bash.
 ```bash
  git clone https://github.com/suvamAdhikary/Capdas-ECommerce.git
 
-cd client/capdas
+ cd client/capdas
 ```
 
 Install the dependencies using ``` npm install``` and devDependencies and start the server from command propmt or any other command shell.
@@ -58,7 +58,6 @@ Install the dependencies using ``` npm install``` and devDependencies and start 
 - amol_nj2_051@masai.school
 - lokesh_sm2_306@masai.school
 - suvam_fw11_059@masai.school
-- rambhu_nj2_117@masai.school
 - rambhu_nj2_117@masai.school
 
 
