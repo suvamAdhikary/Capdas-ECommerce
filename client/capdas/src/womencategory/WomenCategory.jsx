@@ -77,9 +77,11 @@ const WomenCategory = function () {
 
         {womenCategoryData
           .filter(
-            e => (brand === "local") ?
+            e => brand === "local" ?
               e.scope === "Local" :
-                e.scope !== "Local"
+                brand === "national" ?
+                  e.scope === "National" :
+                    undefined
           )
           .filter(
             e => price === 1500 ?
@@ -88,7 +90,7 @@ const WomenCategory = function () {
                   e.price < 2500 :
                     price === 2501 ?
                       e.price > 2500 :
-                        undefined
+                        price > 0
           )
           .map((e) => (
           <Women key={e?._id} e={e} />

@@ -59,6 +59,10 @@ const Filter = function () {
                   className={styles.filterCategoryDiv}
                   onClick={()=>handleBrandFilter("national")}
                 >National Brands</div>
+                <div
+                  className={styles.filterCategoryDiv}
+                  onClick={()=>handleBrandFilter("clear")}
+                >Clear Filter</div>
               </div>
             ) : null}
           </div>
@@ -87,6 +91,10 @@ const Filter = function () {
                   className={styles.filterCategoryDiv}
                   onClick={()=>handlePriceFilter(2501)}
                 >Above 2500</div>
+                <div
+                  className={styles.filterCategoryDiv}
+                  onClick={()=>handlePriceFilter(999999)}
+                >Clear Filter</div>
               </div>
             ) : null}
           </div>
