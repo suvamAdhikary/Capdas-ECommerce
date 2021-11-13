@@ -63,6 +63,8 @@ export default function CapdaS() {
             <Route path="/payment" element={<Payment />} />
             <Route path="/card" element={<CardDetail />} />
             <Route path="/success" element={<Success />} />
+            <Route path="/women/sarees" element={<WomenCategory />} />
+            <Route path="/:productId" element={<ProductPage />} />
             <Route path="/testing" element={<ProductPage />} />
 
         </Routes>
