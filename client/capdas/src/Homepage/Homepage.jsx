@@ -152,10 +152,6 @@ div{
 }
 `
 
-
-
-
-
 export const Hp = () => {
     return <Main>
         <Div><p>Estimated delivery time 1-2 days</p></Div>

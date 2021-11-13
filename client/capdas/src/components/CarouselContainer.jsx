@@ -11,7 +11,7 @@ height: 160px;
 
 
 function CarouselContainer () {
-    return <Carousel fade controls={ false} >
+    return <Carousel fade controls={ true} >
   <Carousel.Item interval={2000}>
     <CarouselImg
       className="d-block w-100"

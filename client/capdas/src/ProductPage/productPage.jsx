@@ -36,8 +36,11 @@ display: flex;
 flex-direction: row;
 }
 div:nth-child(8)> svg{
+  
     margin: 0 3px 15px 3px;
+    border-radius: 10px;
 }
+
 div:nth-child(10){
     width: 326px;
     margin: auto;
@@ -71,6 +74,11 @@ justify-content: space-between;
   width: 64px;
   height: 64px;
   background-color: #56675B;
+  & img{
+      height: 64px;
+      width: 64px;
+      object-fit: cover;
+  }
 
 }
 `;
@@ -141,6 +149,9 @@ export const ProductPage = () => {
     }, [obj.productId])
 
 
+    // const handleColorChange = () => {
+    //     {backgroundColor: red}
+    // }
  
 
     return <Main>
@@ -149,14 +160,14 @@ export const ProductPage = () => {
             <img src={img[0]} alt="mainImage" />
         </Preview>
          <Samples>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div> <img src={img[1]} alt="mainImage" /></div>
+        <div><img src={img[2]} alt="mainImage" /></div>
+        <div><img src={img[3]} alt="mainImage" /></div>
+        <div><img src={img[4]} alt="mainImage" /></div>
         </Samples>
         <Div>
         <div><p>{productData?.name || "ROOP:CYAN"}</p></div>
-        <div><p>4.2/5 <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
+        <div><p>{productData?.rating || "4.2/5"} <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
 <path d="M5.5 7.41659L8.59167 9.66659L7.40833 6.03325L10.5 3.83325H6.70833L5.5 0.083252L4.29167 3.83325H0.5L3.59167 6.03325L2.40833 9.66659L5.5 7.41659Z" fill="#009944"/>
 </svg></p></div>
         </Div>
@@ -166,11 +177,15 @@ export const ProductPage = () => {
 
         <div><p>Handwoven Maheshwari Silk By Cotton. Handwoven, comfortable and elegant Maheshwari saree in Plain white with gold and grey stripes across the body, embellished with a border in black and dull gold. <br /> Proudly Made in India, using 100% organic cotton.</p></div>
         <Highlight>Size</Highlight>
-        <div><svg width="54" height="38" viewBox="0 0 54 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1 11C1 5.47715 5.47715 1 11 1H43C48.5228 1 53 5.47715 53 11V27C53 32.5228 48.5228 37 43 37H11C5.47715 37 1 32.5228 1 27V11Z" fill="#FFFFF7"/>
+        <div id="parent"><svg width="54" height="38" viewBox="0 0 54 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 11C1 5.47715 5.47715 1 11 1H43C48.5228 1 53 5.47715 53 11V27C53 32.5228 48.5228 37 43 37H11C5.47715 37 1 32.5228 1 27V11Z" fill="#FFFFF7"/>
 <path d="M25.544 24V22.768H19.608V19.12H24.504V17.888H19.608V14.512H25.544V13.28H18.216V24H25.544ZM32.0788 24.16C34.1588 24.16 35.7108 23.04 35.7108 21.184C35.7108 19.072 34.0468 18.48 32.5268 18.112L31.3588 17.824C30.1268 17.52 29.3428 17.12 29.3428 16.048C29.3428 15.056 30.2228 14.464 31.4068 14.464C32.7988 14.464 33.8868 15.056 34.3988 16.512L35.5668 15.584C34.9108 13.984 33.3748 13.136 31.4388 13.136C29.5668 13.136 27.8708 14.192 27.8708 16.144C27.8708 18.16 29.4868 18.8 30.9108 19.12L31.9188 19.344C33.3428 19.68 34.2868 19.984 34.2868 21.216C34.2868 22.384 33.2788 22.848 32.0788 22.848C30.7348 22.848 29.0707 22.224 28.5748 20.48L27.5188 21.408C28.2228 23.392 30.0628 24.16 32.0788 24.16Z" fill="#151A17"/>
 <path d="M11 1.5H43V0.5H11V1.5ZM52.5 11V27H53.5V11H52.5ZM43 36.5H11V37.5H43V36.5ZM1.5 27V11H0.5V27H1.5ZM11 36.5C5.7533 36.5 1.5 32.2467 1.5 27H0.5C0.5 32.799 5.20101 37.5 11 37.5V36.5ZM52.5 27C52.5 32.2467 48.2467 36.5 43 36.5V37.5C48.799 37.5 53.5 32.799 53.5 27H52.5ZM43 1.5C48.2467 1.5 52.5 5.7533 52.5 11H53.5C53.5 5.20101 48.799 0.5 43 0.5V1.5ZM11 0.5C5.20101 0.5 0.5 5.20101 0.5 11H1.5C1.5 5.7533 5.7533 1.5 11 1.5V0.5Z" fill="#151A17"/>
-        </svg><svg width="44" height="38" viewBox="0 0 44 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+        </svg>
+            
+            
+            
+            <svg width="44" height="38" viewBox="0 0 44 38" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M1 11C1 5.47715 5.47715 1 11 1H33C38.5228 1 43 5.47715 43 11V27C43 32.5228 38.5228 37 33 37H11C5.47715 37 1 32.5228 1 27V11Z" fill="#FFFFF7"/>
 <path d="M22.36 24.16C24.44 24.16 25.992 23.04 25.992 21.184C25.992 19.072 24.328 18.48 22.808 18.112L21.64 17.824C20.408 17.52 19.624 17.12 19.624 16.048C19.624 15.056 20.504 14.464 21.688 14.464C23.08 14.464 24.168 15.056 24.68 16.512L25.848 15.584C25.192 13.984 23.656 13.136 21.72 13.136C19.848 13.136 18.152 14.192 18.152 16.144C18.152 18.16 19.768 18.8 21.192 19.12L22.2 19.344C23.624 19.68 24.568 19.984 24.568 21.216C24.568 22.384 23.56 22.848 22.36 22.848C21.016 22.848 19.352 22.224 18.856 20.48L17.8 21.408C18.504 23.392 20.344 24.16 22.36 24.16Z" fill="#151A17"/>
 <path d="M11 1.5H33V0.5H11V1.5ZM42.5 11V27H43.5V11H42.5ZM33 36.5H11V37.5H33V36.5ZM1.5 27V11H0.5V27H1.5ZM11 36.5C5.75329 36.5 1.5 32.2467 1.5 27H0.5C0.5 32.799 5.20101 37.5 11 37.5V36.5ZM42.5 27C42.5 32.2467 38.2467 36.5 33 36.5V37.5C38.799 37.5 43.5 32.799 43.5 27H42.5ZM33 1.5C38.2467 1.5 42.5 5.7533 42.5 11H43.5C43.5 5.20101 38.799 0.5 33 0.5V1.5ZM11 0.5C5.20101 0.5 0.5 5.20101 0.5 11H1.5C1.5 5.7533 5.7533 1.5 11 1.5V0.5Z" fill="#151A17"/>
