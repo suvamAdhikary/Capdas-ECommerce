@@ -27,7 +27,7 @@ const Fade = styled.div`
     height: 100%;
     width: 100%;
     background-color: rgba(108, 128, 114, 0.2);
-
+    backdrop-filter: blur(45px);
     @media screen and (max-width: 375px) {
 
         height: 767px !important;  

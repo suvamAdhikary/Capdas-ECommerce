@@ -18,6 +18,7 @@ const FooterNavbar = styled.footer`
     justify-content: space-between; */
 
     @media only screen and (max-width: 375px) {
+        height: 84px;
         position: -webkit-sticky;
         position: sticky;
         position: fixed;

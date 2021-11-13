@@ -12,7 +12,7 @@ const Input = styled.input`
         &[type="checkbox"] {
             width: 10px;
             height: 10px;
-
+            margin-left: 0px;
         }
     }
 
