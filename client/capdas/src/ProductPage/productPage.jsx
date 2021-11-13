@@ -1,7 +1,11 @@
-import styled from "styled-components"
+import { useParams } from "react-router";
+import styled from "styled-components";
+import { base } from "../utils/request";
 import Frame61 from "../Homepage/images/Frame61.png";
-import Button from "../user/utils/Button"
+import FloatButtn from "../utils/FLoatButton";
+import { useEffect, useState } from "react";
 const Main = styled.div`
+
 
 p:nth-child(5){
 font-size: 16px;
@@ -104,9 +108,44 @@ color: #151A17;
 
 
 export const ProductPage = () => {
+    const [productData, setProductData] = useState({});
+    const [img, setImg] = useState([])
+    // const [error, setError] = useState(false);
+    // const [loading, setLoading] = useState(false);
+
+    const obj = useParams();
+
+
+    const getData = async (id) => {
+        try {
+
+            const { data: { product } } = await base(`/products/${id}`);
+
+            setProductData(product);
+            setImg(product?.image)
+
+        } catch (err) {
+            console.log(err.message);
+        }
+    }
+
+
+
+    useEffect(()=> {
+
+        getData(obj.productId);
+
+        return;
+
+    }, [obj.productId])
+
+
+ 
+
     return <Main>
         
         <Preview>  
+            <img src={img[0]} alt="mainImage" />
         </Preview>
          <Samples>
         <div></div>
@@ -115,13 +154,13 @@ export const ProductPage = () => {
         <div></div>
         </Samples>
         <Div>
-        <div><p>ROOP:CYAN</p></div>
+        <div><p>{productData?.name || "ROOP:CYAN"}</p></div>
         <div><p>4.2/5 <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
 <path d="M5.5 7.41659L8.59167 9.66659L7.40833 6.03325L10.5 3.83325H6.70833L5.5 0.083252L4.29167 3.83325H0.5L3.59167 6.03325L2.40833 9.66659L5.5 7.41659Z" fill="#009944"/>
 </svg></p></div>
         </Div>
-         <Button>Add to Bag</Button>
-        <p>Rs.2499</p>
+         <FloatButtn>Add to Bag</FloatButtn>
+        <p>Rs.{+productData?.price || 2499}</p>
         <div><p>Handwoven Maheshwari Silk By Cotton. Handwoven, comfortable and elegant Maheshwari saree in Plain white with gold and grey stripes across the body, embellished with a border in black and dull gold. <br /> Proudly Made in India, using 100% organic cotton.</p></div>
         <Highlight>Size</Highlight>
         <div><svg width="54" height="38" viewBox="0 0 54 38" fill="none" xmlns="http://www.w3.org/2000/svg">

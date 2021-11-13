@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
 import styles from "./women.module.css";
+
 
 export default function Women({e}) {
 
     return (
-        <>
+        <><Link to={e._id}>
             <div className={styles.filterFooterDiv}>
                 <img
                   src={e.image[0]}
@@ -26,6 +28,6 @@ export default function Women({e}) {
                   />
                 </div>
             </div>
-        </>
+        </Link></>
     )
 }
