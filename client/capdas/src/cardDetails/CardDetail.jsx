@@ -1,8 +1,9 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { base } from "../utils/request"
 import styled from "styled-components"
 import Button from "../utils/Button";
-import { useEffect, useState } from "react";
+import { useParams } from "react-router";
 
 
 const Back = styled.div`
@@ -122,7 +123,7 @@ const Form = styled.form`
 
 
 export const CardDetail = () => {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState({});
     const [cardData, setCardData] = ({
         name: "",
         no: "",
@@ -134,19 +135,23 @@ export const CardDetail = () => {
         getData();
     })
 
-    const getData = async () => {
+    const obj = useParams();
+    const getData = async (id) => {
     
         try {
-            const {data} = await base.get("/users/:id", {
-            
-            })
-            setData(data);
-            // console.log(data);
-        } catch (e) {
-            console.error(e);
+            const {data : {user}} = await base.get(`/users/${id}`);
+
+            setData(user);
+
+        } catch (err){
+            console.log(err.message);
         }
     }
 
+    useEffect(() => {
+        getData(obj.userId)
+        return;
+    }, [obj.userId])
 
     const handleChange = (e) => {
         e.preventDefault();
@@ -158,18 +163,6 @@ export const CardDetail = () => {
             [name]: value,
         })
     }
-
-
-    // const handleSubmit = () => {
-    //     const {CardNumber, expiryMonth, expiryYear} = formdata;
-    //     if(CardNumber.length === 16 && Number(expiryMonth) < 13 && Number(expiryYear) < 3000){
-    //         base.post("/cardDetail",
-    //         formdata)
-    //     } else {
-    //         alert("Check your card details");
-    //     }
-    // }
-
 
     const [name, no, expiry, cvv] = cardData;
 
@@ -184,7 +177,7 @@ export const CardDetail = () => {
                 <p>Payment</p>
             </Title>
             <TotalAmount>
-            <p>1 Item: Total Rs 2,999</p>
+            <p>{data?.totalItemInBags} Item: Total Rs {data?.totalPrice}</p>
             </TotalAmount>
             <Card>
                 <img src="assets/card.png" alt="cardImage" />
