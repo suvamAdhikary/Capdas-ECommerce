@@ -188,9 +188,9 @@
   border-radius: 5px;
 }
 .filterIcon {
-  position: absolute;
-  top: 620px;
-  left: 288px;
+  position: fixed;
+  top: 670px;
+  left: 298px;
   width: 48px;
   height: 48px;
 }
