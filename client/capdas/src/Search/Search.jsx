@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import searchimg from './'
+import searchimg from '../Mend/img/search.png'
 import styles from './Search.module.css'
 function Search(){
 const [search, setSearch] = useState([]);
