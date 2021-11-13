@@ -8,14 +8,31 @@ const FooterNavbar = styled.footer`
 
     /* position: absolute;
     bottom: 16px; */
-    padding: 20px 20px 16px 20px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    /* padding: 20px 20px 16px 20px; */
+    /* box-sizing: border-box; */
     /* display: flex;
     flex-direction: row;
     justify-content: space-between; */
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-between; */
+
+    @media only screen and (max-width: 375px) {
+        position: -webkit-sticky;
+        position: sticky;
+        position: absolute;
+        top: 728px;
+        z-index: 999999;
+        background-color: #FFFFF7;
+        nav {
+            width: 375px;
+            padding: 20px 20px 16px 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
 `;
 
 const Nav = styled.nav`
