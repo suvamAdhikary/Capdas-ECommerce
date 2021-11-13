@@ -124,29 +124,33 @@ const Form = styled.form`
 
 export const CardDetail = () => {
     const [data, setData] = useState({});
-    const [cardData, setCardData] = ({
+    const [cardData, setCardData] = useState({
         name: "",
         no: "",
         expiry: "",
         cvv: ""
     })
 
-    useEffect (() => {
-        getData();
-    })
-
     const obj = useParams();
     const getData = async (id) => {
     
         try {
-            const {data : {user}} = await base.get(`/users/${id}`);
+            const {data : {item}} = await base.get(`/users/${id}`);
 
-            setData(user);
+            setData(item);
+            return;
 
         } catch (err){
             console.log(err.message);
         }
     }
+
+    const userId = JSON.parse(localStorage.getItem('CapdaS_user_id'));
+    useEffect (() => {
+        getData(userId);
+    })
+
+
 
     useEffect(() => {
         getData(obj.userId)
@@ -164,7 +168,7 @@ export const CardDetail = () => {
         })
     }
 
-    const [name, no, expiry, cvv] = cardData;
+    // const [name, no, expiry, cvv] = cardData;
 
     return (
         <>
@@ -186,10 +190,10 @@ export const CardDetail = () => {
                 <p>Enter your card details</p>
             </P>
             <Form>
-                <input onChange={(e) => handleChange(e)} name="name" value={name} className="inp_name" type="text" placeholder="Cardholder name" />
-                <input onChange={(e) => handleChange(e)} name="no" value={no} className="inp_number"  type="text" placeholder="Crad Number" />
-                <input onChange={(e) => handleChange(e)} name="expiry" value={expiry} className="inp_expiry"  type="text" placeholder="Expiry" />
-                <input onChange={(e) => handleChange(e)} name="cvv" value={cvv} className="inp_cvv"  type="password" placeholder="CVV" />
+                <input onChange={(e) => handleChange(e)} name="name" value={"name"} className="inp_name" type="text" placeholder="Cardholder name" />
+                <input onChange={(e) => handleChange(e)} name="no" value={"no"} className="inp_number"  type="text" placeholder="Crad Number" />
+                <input onChange={(e) => handleChange(e)} name="expiry" value={"expiry"} className="inp_expiry"  type="text" placeholder="Expiry" />
+                <input onChange={(e) => handleChange(e)} name="cvv" value={"cvv"} className="inp_cvv"  type="password" placeholder="CVV" />
 
                 <Link to="/success">
                     <Button> Confirm Payment </Button>
