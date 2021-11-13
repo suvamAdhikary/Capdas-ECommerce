@@ -7,9 +7,28 @@ import styles from "./women.module.css";
 
 const WomenCategory = function () {
   const [womenCategoryData, setwomenCategoryData] = useState([]);
+  const [brand, setBrand] = useState("");
+  const [price, setPrice] = useState("");
+
+
+
+
 
   useEffect(() => {
+
+    const brandNow = JSON.parse(localStorage.getItem('capdasBrandFilter'));
+    if(brandNow) {
+      setBrand(brandNow)
+    }
+
+    const priceNow = JSON.parse(localStorage.getItem('capdasPriceFilter'));
+    if(priceNow) {
+      setPrice(priceNow)
+    }
+
     fetchedData();
+
+
   }, []);
 
   const fetchedData = async function () {
@@ -56,7 +75,22 @@ const WomenCategory = function () {
         </div>
         {/* {div containig filter footer and one static card} */}
 
-        {womenCategoryData.map((e) => (
+        {womenCategoryData
+          .filter(
+            e => (brand === "local") ?
+              e.scope === "Local" :
+                e.scope !== "Local"
+          )
+          .filter(
+            e => price === 1500 ?
+              e.price < 1500 :
+                price === 2500 ?
+                  e.price < 2500 :
+                    price === 2501 ?
+                      e.price > 2500 :
+                        undefined
+          )
+          .map((e) => (
           <Women key={e?._id} e={e} />
         ))}
         <div className={styles.filterIcon}>
@@ -65,6 +99,11 @@ const WomenCategory = function () {
           </Link>
         </div>
       </div>
+      {/* {!nodisplay ? <Filter 
+        handleBrandFilter={handleBrandFilter}
+        handlePriceFilter={handlePriceFilter}
+        handleSizeFilter={handleSizeFilter}
+      /> : null} */}
     </>
   );
 };

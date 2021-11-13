@@ -78,9 +78,9 @@ export default function AddAddress() {
 
     const handleSubmit = async () => {
         const id = JSON.parse(localStorage.getItem('CapdaS_user_id'));
-        console.log(JSON.stringify({
-            "address": formData
-        }));
+        // console.log(JSON.stringify({
+        //     "address": formData
+        // }));
         try {
             await base.patch(`/users/${id}`, {
                 "address": formData
