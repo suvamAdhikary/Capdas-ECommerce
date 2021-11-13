@@ -20,7 +20,7 @@ const FooterNavbar = styled.footer`
     @media only screen and (max-width: 375px) {
         position: -webkit-sticky;
         position: sticky;
-        position: absolute;
+        position: fixed;
         top: 728px;
         z-index: 999999;
         background-color: #FFFFF7;
