@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
-
+import { base } from "../utils/request"
 import styled from "styled-components"
 import Button from "../utils/Button";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Back = styled.div`
     position: absolute;
@@ -120,18 +122,57 @@ const Form = styled.form`
 
 
 export const CardDetail = () => {
+    const [data, setData] = useState([]);
+    const [cardData, setCardData] = ({
+        name: "",
+        no: "",
+        expiry: "",
+        cvv: ""
+    })
+
+    useEffect (() => {
+        getData();
+    })
+
+    const getData = async () => {
+    
+        try {
+            const {data} = await base.get("/users/:id", {
+            
+            })
+            setData(data);
+            // console.log(data);
+        } catch (e) {
+            console.error(e);
+        }
+    }
+
+    // const handleChange = (e) => {
+    //     const {name, value} = e.target;
+    // }
+
+    // const handleSubmit = () => {
+    //     const {CardNumber, expiryMonth, expiryYear} = formdata;
+    //     if(CardNumber.length === 16 && Number(expiryMonth) < 13 && Number(expiryYear) < 3000){
+    //         base.post("/cardDetail",
+    //         formdata)
+    //     } else {
+    //         alert("Check your card details");
+    //     }
+    // }
+
     return (
         <>
             <Back>
                 <Link to="/payment">
-                    <img src="assets/leftArrow.png" alt="back" />
+                    <img src="assets/leftarrow.svg" alt="back" />
                 </Link>
             </Back>
             <Title>
                 <p>Payment</p>
             </Title>
             <TotalAmount>
-                <p>1 Item: Total Rs 2,499</p>
+            <p>1 Item: Total Rs 2,999</p>
             </TotalAmount>
             <Card>
                 <img src="assets/card.png" alt="cardImage" />
@@ -140,10 +181,10 @@ export const CardDetail = () => {
                 <p>Enter your card details</p>
             </P>
             <Form>
-                <input className="inp_name" type="text" placeholder="Cardholder name" />
-                <input className="inp_number"  type="number" placeholder="Crad Number" />
-                <input className="inp_expiry"  type="number" placeholder="Expiry" />
-                <input className="inp_cvv"  type="number" placeholder="CVV" />
+                <input onChange={(e) => handleChange(e)} className="inp_name" type="text" placeholder="Cardholder name" />
+                <input onChange={(e) => handleChange(e)} className="inp_number"  type="number" placeholder="Crad Number" />
+                <input onChange={(e) => handleChange(e)} className="inp_expiry"  type="number" placeholder="Expiry" />
+                <input onChange={(e) => handleChange(e)} className="inp_cvv"  type="number" placeholder="CVV" />
 
                 <Link to="/success">
                     <Button> Confirm Payment </Button>
