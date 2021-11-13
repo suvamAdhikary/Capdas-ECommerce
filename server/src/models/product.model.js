@@ -6,9 +6,10 @@ const productSchema = new mongoose.Schema(
     price: { type: Number, required: true },
     discountPrice: { type: Number, required: true },
     image: { type: Array, required: true },
-    size: { type: Array, required: false },
+    size: { type: String, required: false },
+    scope: { type: String, required: false },
     rating: { type: String, required: true },
-    productDetails: { type: Array, required: false },
+    productDetails: { type: String, required: false },
     productCare: { type: Array, required: false },
     categoryId: {
       type: mongoose.Schema.Types.ObjectId,

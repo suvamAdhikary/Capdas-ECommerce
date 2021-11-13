@@ -4,6 +4,7 @@ import { base } from "../utils/request";
 import Frame61 from "../Homepage/images/Frame61.png";
 import FloatButtn from "../utils/FLoatButton";
 import { useEffect, useState } from "react";
+
 const Main = styled.div`
 
 
@@ -160,7 +161,9 @@ export const ProductPage = () => {
 </svg></p></div>
         </Div>
          <FloatButtn>Add to Bag</FloatButtn>
+
         <p>Rs.{+productData?.price || 2499}</p>
+
         <div><p>Handwoven Maheshwari Silk By Cotton. Handwoven, comfortable and elegant Maheshwari saree in Plain white with gold and grey stripes across the body, embellished with a border in black and dull gold. <br /> Proudly Made in India, using 100% organic cotton.</p></div>
         <Highlight>Size</Highlight>
         <div><svg width="54" height="38" viewBox="0 0 54 38" fill="none" xmlns="http://www.w3.org/2000/svg">

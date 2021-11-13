@@ -13,6 +13,14 @@ import img11 from "./images/img11.jpg";
 const Main = styled.main`
 width: 375px;
 color: #151A17;
+p:nth-child(8){
+font-size: 14px;
+font-weight: 400;
+line-height: 17px;
+letter-spacing: 1px;
+margin: 32px 0 65px 0;
+text-decoration:underline;
+}
 `;
 
 const PP = styled.p`
@@ -170,6 +178,7 @@ export const Hp = () => {
             <div><img src={Rectangle66} alt="" /></div>
         </Circles>
         <img src={img11} alt="" />
+        <p>Do it yourself videos coming soon!</p>
       
     </Main>
 }
