@@ -190,10 +190,10 @@ export const CardDetail = () => {
                 <p>Enter your card details</p>
             </P>
             <Form>
-                <input onChange={(e) => handleChange(e)} name="name" value={"name"} className="inp_name" type="text" placeholder="Cardholder name" />
-                <input onChange={(e) => handleChange(e)} name="no" value={"no"} className="inp_number"  type="text" placeholder="Crad Number" />
-                <input onChange={(e) => handleChange(e)} name="expiry" value={"expiry"} className="inp_expiry"  type="text" placeholder="Expiry" />
-                <input onChange={(e) => handleChange(e)} name="cvv" value={"cvv"} className="inp_cvv"  type="password" placeholder="CVV" />
+                <input onChange={(e) => handleChange(e)} name="name"  className="inp_name" type="text" placeholder="Cardholder name" />
+                <input onChange={(e) => handleChange(e)} name="no"  className="inp_number"  type="text" placeholder="Crad Number" />
+                <input onChange={(e) => handleChange(e)} name="expiry"  className="inp_expiry"  type="text" placeholder="Expiry" />
+                <input onChange={(e) => handleChange(e)} name="cvv" className="inp_cvv"  type="password" placeholder="CVV" />
 
                 <Link to="/success">
                     <Button> Confirm Payment </Button>

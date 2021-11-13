@@ -24,7 +24,7 @@ import Filter from "./Filter/Filter";
 
 
 const noShowTop = ["/", "/ss2", "/signup", "/signin", "/menu", "/newaddress", "/bag", "/payment", "/card", "/success", "/filter"];
-const noShowBot = ["/", "/ss2", "/signup", "/signin", "/menu", "/newaddress", "/filter", "/payment" ];
+const noShowBot = ["/", "/ss2", "/signup", "/signin", "/menu", "/newaddress", "/filter", "/payment", "/bag", "/card", "/success" ];
 
 
 export default function CapdaS() {
