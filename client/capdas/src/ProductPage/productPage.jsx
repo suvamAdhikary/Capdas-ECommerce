@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import Frame61 from "../Homepage/images/Frame61.png";
-import Button from "../user/utils/Button"
+import FloatButtn from "../utils/FLoatButton"
 const Main = styled.div`
 
 p:nth-child(5){
@@ -120,7 +120,7 @@ export const ProductPage = () => {
 <path d="M5.5 7.41659L8.59167 9.66659L7.40833 6.03325L10.5 3.83325H6.70833L5.5 0.083252L4.29167 3.83325H0.5L3.59167 6.03325L2.40833 9.66659L5.5 7.41659Z" fill="#009944"/>
 </svg></p></div>
         </Div>
-         <Button>Add to Bag</Button>
+         <FloatButtn>Add to Bag</FloatButtn>
         <p>Rs.2499</p>
         <div><p>Handwoven Maheshwari Silk By Cotton. Handwoven, comfortable and elegant Maheshwari saree in Plain white with gold and grey stripes across the body, embellished with a border in black and dull gold. <br /> Proudly Made in India, using 100% organic cotton.</p></div>
         <Highlight>Size</Highlight>
