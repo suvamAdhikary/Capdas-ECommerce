@@ -50,6 +50,9 @@ padding: 10px;
 border-radius: 10px;
 color: #151A17;
  
+div > a {
+    color: #151A17;
+}
 
 div{
     display:flex;
@@ -122,7 +125,9 @@ export const Menu = () => {
                 <Cross/>
                 <Flex>
                     <div>
-                    <div><p>Mend</p></div>
+                    
+                    <div><Link to="/mendmenu"><p>Mend</p></Link></div>
+                    
                         <div><img src={rightArrow} alt="" /></div>
                     </div>
                     <div><div><p>Rent</p></div>

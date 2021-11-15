@@ -2,6 +2,7 @@ import styled from "styled-components"
 import Cross from "../user/utils/Cross"
 import rightArrow from "../Homepage/images/rightArrow.png";
 import leftArrow from "../Homepage/images/leftArrow.jpg"
+import { Link } from "react-router-dom";
 
 const Top = styled.div`
 margin: 10px 0;
@@ -62,7 +63,10 @@ box-sizing: border-box;
 padding: 10px;
 border-radius: 10px;
 color: #151A17;
- 
+
+div > div > a {
+    color: #151A17;
+}
 
 div{
     display:flex;
@@ -114,20 +118,32 @@ export const MendMenu = () => {
             <div>
                 
                 <Flex>
-                    <div><div><p>Upperwear</p></div>
-                    <div><img src={rightArrow} alt="" /></div></div>
-                    <div><div><p>Bottomwear</p></div>
-                    <div><img src={rightArrow} alt="" /></div></div>
-                    <div><div><p>Winterwear</p></div>
-                    <div><img src={rightArrow} alt="" /></div></div>
-                    <div><div><p>Formals</p></div>
-                    <div><img src={rightArrow} alt="" /></div></div>
-                    <div><div><p>Footware</p></div>
-                    <div><img src={rightArrow} alt="" /></div></div>
-                    <div><div><p>Accessories</p></div>
+                    
+                    <div><div><Link to="/mend"><p>Upperwear</p></Link></div>
                     <div><img src={rightArrow} alt="" /></div></div>
                     
-</Flex>
+                    
+                    <div><div><Link to="/mend"><p>Bottomwear</p></Link></div>
+                    <div><img src={rightArrow} alt="" /></div></div>
+                    
+                    
+                    <div><div><Link to="/mend"><p>Winterwear</p></Link></div>
+                    <div><img src={rightArrow} alt="" /></div></div>
+                    
+                    
+                    <div><div><Link to="/mend"><p>Formals</p></Link></div>
+                    <div><img src={rightArrow} alt="" /></div></div>
+                    
+                    
+                    <div><div><Link to="/mend"><p>Footware</p></Link></div>
+                    <div><img src={rightArrow} alt="" /></div></div>
+                    
+                    
+                    <div><div><Link to="/mend"><p>Accessories</p></Link></div>
+                    <div><img src={rightArrow} alt="" /></div></div>
+                    
+                    
+                </Flex>
             </div>
         </Container>
     </>

@@ -20,7 +20,8 @@ import { Payment } from "./payment/Payment";
 import { CardDetail } from "./cardDetails/CardDetail";
 import { Success } from "./successPage/Success";
 import Filter from "./Filter/Filter";
-
+import Tailer from "./Mend/Tailer";
+import  {MendMenu} from "./MendMenu/MendMenu";
 
 
 const noShowTop = ["/", "/ss2", "/signup", "/signin", "/menu", "/newaddress", "/bag", "/payment", "/card", "/success", "/filter"];
@@ -58,6 +59,8 @@ export default function CapdaS() {
             <Route path="/account" element={<Account />} />
             <Route path="/CapdaS" exact element={<Hp />} />
             <Route path="/menu" element={<Menu />} />
+            <Route path="/mendmenu" element={<MendMenu />} />
+            <Route path="/mend" element={<Tailer />} />
             <Route path="/categories" element={<Category />} />
             <Route path="/filter" element={<Filter />} />
             <Route path="/bag" element={<Bag />} />
