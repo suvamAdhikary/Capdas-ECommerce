@@ -12,6 +12,6 @@ import axios from 'axios';
 // }
 
 export const base = axios.create({
-    baseURL: 'http://localhost:6060', //config
+    baseURL: 'https://capdas.herokuapp.com/', //config
 });
 

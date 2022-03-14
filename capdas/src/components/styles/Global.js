@@ -5,6 +5,7 @@ const GlobalStyles = createGlobalStyle`
     html {
       box-sizing: border-box;
       text-align: center;
+      
     }
 
     *, *::before, *::after {
@@ -47,6 +48,13 @@ const GlobalStyles = createGlobalStyle`
 
     code {
       font-family: 'Cabinet Grotesk', sans-serif;
+    }
+    .App{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+
     }
 `;
 

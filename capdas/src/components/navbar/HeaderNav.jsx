@@ -5,6 +5,7 @@ import Heading from "../Heading";
 import NavButton from "./NavButton";
 
 const HeaderNavbar = styled.header`
+    width: 375px;
 padding: 20px 20px 16px 20px;
 box-sizing: border-box;
     display: flex;
