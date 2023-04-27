@@ -12,6 +12,6 @@ import axios from 'axios';
 // }
 
 export const base = axios.create({
-    baseURL: 'https://capdas.herokuapp.com/', //config
+    baseURL: 'https://capdas.onrender.com/', //config
 });
 

@@ -1,6 +1,6 @@
 {
   "name": "capdas",
-  "proxy": "https://capdas.herokuapp.com/",
+  "proxy": "https://capdas.onrender.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
